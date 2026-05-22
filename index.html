@@ -1,0 +1,2654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HDFC Bank — Support &amp; Resolution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+<style>
+/* ============ DESIGN SYSTEM ============ */
+:root{
+  --navy:#0e2647;
+  --navy-deep:#091b35;
+  --navy-soft:#1b3a63;
+  --indigo:#2c3f66;
+  --blue:#3a5a92;
+  --blue-info:#2f6aa8;
+  --blue-tint:#eaf0f8;
+  --cream:#f3ede1;
+  --cream-deep:#ece4d4;
+  --surface:#faf6ee;
+  --offwhite:#fcfbf7;
+  --paper:#ffffff;
+  --grey-50:#f4f2ed;
+  --border:#e5e0d4;
+  --border-soft:#eeeae0;
+  --text:#1d2533;
+  --text-mid:#4a5365;
+  --text-soft:#737b8c;
+  --text-faint:#9aa0ad;
+  --red:#cf2236;
+  --red-deep:#b21f31;
+  --red-muted:#a83442;
+  --red-tint:#fbeceb;
+  --green:#2f8a59;
+  --green-tint:#e7f3ec;
+  --amber:#bd842a;
+  --amber-tint:#f8efdc;
+  --info:#2f6aa8;
+  --info-tint:#e9f1f9;
+  --shadow-xs:0 1px 2px rgba(14,38,71,.05);
+  --shadow-sm:0 2px 8px rgba(14,38,71,.06);
+  --shadow-md:0 8px 28px rgba(14,38,71,.10);
+  --shadow-lg:0 22px 60px rgba(14,38,71,.20);
+  --r-sm:8px; --r-md:14px; --r-lg:20px; --r-xl:28px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --serif:'Source Serif 4',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--sans);
+  background:var(--surface);
+  color:var(--text);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:rgba(207,34,54,.16);}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+input,select,textarea{font-family:inherit;font-size:14px;color:var(--text);}
+img{max-width:100%;display:block;}
+
+/* ============ LAYOUT ============ */
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+.section{padding:78px 0;}
+.eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--text-faint);display:flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--border);}
+.eyebrow.light{color:rgba(255,255,255,.5);}
+.eyebrow.light::before{background:rgba(255,255,255,.22);}
+h1,h2,h3,h4{font-weight:600;line-height:1.18;letter-spacing:-.01em;}
+.h-serif{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;}
+.h-serif em{font-style:italic;font-weight:400;color:var(--blue);}
+.sec-title{font-size:33px;margin-bottom:14px;}
+.sec-sub{color:var(--text-mid);font-size:15.5px;max-width:560px;}
+
+/* ============ HEADER ============ */
+.header{
+  position:sticky;top:0;z-index:120;
+  background:rgba(252,251,247,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border-soft);
+}
+.header-in{
+  max-width:1180px;margin:0 auto;padding:0 32px;height:64px;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:11px;}
+.logo-mark{
+  width:34px;height:34px;border-radius:7px;background:var(--navy);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.logo-mark span{
+  width:13px;height:13px;border:2.4px solid #fff;border-radius:2px;position:relative;
+}
+.logo-mark span::after{content:"";position:absolute;inset:2.4px;background:var(--red);}
+.logo-txt b{font-size:14.5px;font-weight:700;color:var(--navy);letter-spacing:-.01em;display:block;line-height:1.1;}
+.logo-txt small{font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--text-faint);}
+.hdr-search{
+  flex:1;max-width:430px;margin:0 auto;position:relative;
+  display:flex;align-items:center;gap:9px;
+  height:38px;padding:0 14px;
+  background:var(--paper);border:1px solid var(--border);border-radius:9px;
+  color:var(--text-soft);font-size:13px;transition:.2s var(--ease);
+}
+.hdr-search:hover{border-color:#d3ccba;box-shadow:var(--shadow-xs);}
+.hdr-search svg{flex-shrink:0;}
+.hdr-search span{flex:1;}
+.hdr-search kbd{
+  font-family:var(--sans);font-size:10px;font-weight:600;color:var(--text-faint);
+  border:1px solid var(--border);border-radius:4px;padding:2px 6px;background:var(--grey-50);
+}
+.hdr-right{display:flex;align-items:center;gap:14px;}
+.lang{
+  display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:500;
+  color:var(--text-soft);padding:6px 8px;border-radius:7px;transition:.15s;
+}
+.lang:hover{background:var(--grey-50);}
+.btn-login{
+  height:38px;padding:0 18px;border-radius:9px;
+  background:var(--navy);color:#fff;font-size:13px;font-weight:600;
+  transition:.18s var(--ease);
+}
+.btn-login:hover{background:var(--navy-deep);transform:translateY(-1px);}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  height:46px;padding:0 22px;border-radius:11px;
+  font-size:14px;font-weight:600;transition:.2s var(--ease);white-space:nowrap;
+}
+.btn-sm{height:38px;padding:0 16px;font-size:13px;border-radius:9px;}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(207,34,54,.26);}
+.btn-red:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 10px 26px rgba(207,34,54,.32);}
+.btn-navy{background:var(--navy);color:#fff;}
+.btn-navy:hover{background:var(--navy-deep);transform:translateY(-2px);}
+.btn-ghost{background:var(--paper);color:var(--navy);border:1px solid var(--border);}
+.btn-ghost:hover{border-color:var(--navy);background:var(--offwhite);transform:translateY(-1px);}
+.btn-outline-light{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.22);}
+.btn-outline-light:hover{background:rgba(255,255,255,.13);}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--blue);
+}
+.link-arrow svg{transition:transform .2s var(--ease);}
+.link-arrow:hover svg{transform:translateX(3px);}
+
+/* ============ CHIPS ============ */
+.chip{
+  display:inline-flex;align-items:center;gap:6px;
+  height:26px;padding:0 11px;border-radius:99px;
+  font-size:11.5px;font-weight:600;letter-spacing:.01em;
+}
+.chip-dot{width:6px;height:6px;border-radius:50%;}
+.chip-green{background:var(--green-tint);color:var(--green);}
+.chip-green .chip-dot{background:var(--green);}
+.chip-amber{background:var(--amber-tint);color:var(--amber);}
+.chip-amber .chip-dot{background:var(--amber);}
+.chip-blue{background:var(--info-tint);color:var(--info);}
+.chip-blue .chip-dot{background:var(--info);}
+.chip-red{background:var(--red-tint);color:var(--red-muted);}
+.chip-red .chip-dot{background:var(--red-muted);}
+.chip-neutral{background:var(--grey-50);color:var(--text-soft);}
+
+/* ============ HERO ============ */
+.hero{
+  background:linear-gradient(180deg,var(--offwhite) 0%,var(--surface) 100%);
+  border-bottom:1px solid var(--border-soft);
+  padding:62px 0 70px;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;}
+.hero h1{font-size:50px;line-height:1.06;margin-bottom:20px;}
+.hero-sub{font-size:16px;color:var(--text-mid);max-width:440px;margin-bottom:26px;}
+.hero-cta{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;}
+.hero-links{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.hero-links a{
+  font-size:12.5px;font-weight:600;color:var(--text-soft);
+  padding:7px 12px;border-radius:8px;display:flex;align-items:center;gap:6px;transition:.15s;
+}
+.hero-links a:hover{background:var(--paper);color:var(--navy);box-shadow:var(--shadow-xs);}
+.hero-links .sep{width:1px;height:14px;background:var(--border);}
+
+/* hero visual */
+.hero-visual{
+  position:relative;height:392px;border-radius:var(--r-xl);
+  background:
+    linear-gradient(155deg,var(--navy) 0%,var(--navy-deep) 100%);
+  overflow:hidden;box-shadow:var(--shadow-lg);
+}
+.hv-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:38px 38px;
+  -webkit-mask-image:radial-gradient(120% 90% at 78% 20%,#000 35%,transparent 80%);
+          mask-image:radial-gradient(120% 90% at 78% 20%,#000 35%,transparent 80%);
+}
+.hv-label{
+  position:absolute;top:24px;left:26px;
+  font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:rgba(255,255,255,.42);
+}
+.hv-chip{
+  position:absolute;display:flex;align-items:center;gap:9px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(6px);
+  border-radius:11px;padding:10px 13px;
+  animation:floaty 6s ease-in-out infinite;
+}
+.hv-chip .ic{
+  width:30px;height:30px;border-radius:8px;display:grid;place-items:center;flex-shrink:0;
+}
+.hv-chip b{font-size:12px;color:#fff;display:block;line-height:1.25;}
+.hv-chip small{font-size:10px;color:rgba(255,255,255,.5);}
+.hv-1{top:62px;left:34px;animation-delay:0s;}
+.hv-2{top:158px;right:30px;animation-delay:-2s;}
+.hv-3{bottom:96px;left:48px;animation-delay:-4s;}
+.hv-prog{
+  position:absolute;bottom:24px;left:26px;right:26px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:13px;padding:14px 16px;
+}
+.hv-prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px;}
+.hv-prog-top b{font-size:11.5px;color:#fff;}
+.hv-prog-top span{font-size:10px;color:rgba(255,255,255,.45);}
+.hv-track{display:flex;gap:5px;}
+.hv-seg{flex:1;height:4px;border-radius:3px;background:rgba(255,255,255,.12);}
+.hv-seg.on{background:var(--green);}
+.hv-seg.cur{background:var(--amber);}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+
+/* ============ SUPPORT SEARCH ============ */
+.searchbox{
+  margin-top:34px;background:var(--paper);
+  border:1px solid var(--border);border-radius:var(--r-lg);
+  box-shadow:var(--shadow-md);overflow:hidden;
+}
+.search-in{display:flex;align-items:center;gap:12px;padding:6px 6px 6px 20px;}
+.search-in svg{flex-shrink:0;color:var(--text-soft);}
+.search-in input{
+  flex:1;border:none;outline:none;height:50px;font-size:15.5px;background:transparent;
+}
+.search-in input::placeholder{color:var(--text-faint);}
+.search-go{
+  height:46px;padding:0 22px;border-radius:13px;background:var(--red);color:#fff;
+  font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;transition:.2s var(--ease);
+}
+.search-go:hover{background:var(--red-deep);}
+.search-tags{display:flex;gap:8px;padding:0 20px 16px;flex-wrap:wrap;}
+.search-tag{
+  font-size:12px;font-weight:500;color:var(--text-mid);
+  padding:6px 12px;border-radius:99px;background:var(--grey-50);
+  border:1px solid var(--border-soft);transition:.15s;
+}
+.search-tag:hover{background:var(--blue-tint);color:var(--blue);border-color:transparent;}
+.search-results{
+  border-top:1px solid var(--border-soft);background:var(--offwhite);
+  max-height:0;overflow:hidden;transition:max-height .4s var(--ease);
+}
+.search-results.open{max-height:620px;overflow-y:auto;}
+.sr-inner{padding:18px 20px;}
+.sr-head{
+  display:flex;align-items:center;gap:9px;margin-bottom:14px;
+  font-size:12px;color:var(--text-soft);
+}
+.sr-head b{color:var(--text);font-weight:600;}
+.sr-group-label{
+  font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-faint);margin:14px 0 9px;
+}
+.sr-group-label:first-child{margin-top:0;}
+.sr-item{
+  display:flex;align-items:center;gap:13px;padding:12px 13px;border-radius:11px;
+  background:var(--paper);border:1px solid var(--border-soft);margin-bottom:7px;
+  transition:.16s var(--ease);
+}
+.sr-item:hover{border-color:#d6cfbd;transform:translateX(3px);box-shadow:var(--shadow-xs);}
+.sr-ic{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;}
+.sr-ic.blue{background:var(--info-tint);color:var(--info);}
+.sr-ic.red{background:var(--red-tint);color:var(--red-muted);}
+.sr-ic.amber{background:var(--amber-tint);color:var(--amber);}
+.sr-ic.green{background:var(--green-tint);color:var(--green);}
+.sr-tx{flex:1;min-width:0;}
+.sr-tx b{font-size:13.5px;font-weight:600;display:block;}
+.sr-tx span{font-size:12px;color:var(--text-soft);}
+.sr-meta{font-size:11px;font-weight:600;color:var(--text-faint);text-align:right;flex-shrink:0;}
+.sr-cta{
+  border-top:1px solid var(--border-soft);padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:var(--blue-tint);
+}
+.sr-cta p{font-size:12.5px;color:var(--indigo);}
+.sr-cta p b{color:var(--navy);}
+
+/* ============ GENERIC CARD ============ */
+.card{
+  background:var(--paper);border:1px solid var(--border);border-radius:var(--r-md);
+}
+
+/* ============ SUPPORT WORKSPACE ============ */
+.ws-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:26px;flex-wrap:wrap;}
+.ws-tabs{display:flex;gap:4px;background:var(--cream-deep);padding:5px;border-radius:13px;width:fit-content;}
+.ws-tab{
+  display:flex;align-items:center;gap:8px;padding:10px 17px;border-radius:9px;
+  font-size:13px;font-weight:600;color:var(--text-mid);transition:.18s var(--ease);
+}
+.ws-tab .tnum{
+  width:18px;height:18px;border-radius:5px;background:rgba(0,0,0,.06);
+  font-size:10px;display:grid;place-items:center;color:var(--text-soft);
+}
+.ws-tab:hover{color:var(--navy);}
+.ws-tab.active{background:var(--paper);color:var(--navy);box-shadow:var(--shadow-sm);}
+.ws-tab.active .tnum{background:var(--navy);color:#fff;}
+.ws-body{display:grid;grid-template-columns:1.62fr 1fr;gap:22px;align-items:start;}
+.ws-form-card{background:var(--paper);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);overflow:hidden;}
+.wfc-head{padding:22px 26px 18px;border-bottom:1px solid var(--border-soft);}
+.wfc-head h3{font-size:19px;margin-bottom:5px;}
+.wfc-head p{font-size:13px;color:var(--text-soft);}
+.wfc-body{padding:22px 26px 26px;}
+
+/* form elements */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:12px;font-weight:600;color:var(--text-mid);display:flex;align-items:center;gap:6px;}
+.field label .req{color:var(--red);}
+.field input,.field select,.field textarea{
+  height:43px;padding:0 13px;border:1px solid var(--border);border-radius:9px;
+  background:var(--offwhite);outline:none;transition:.16s var(--ease);width:100%;
+}
+.field textarea{height:auto;padding:11px 13px;resize:vertical;min-height:94px;line-height:1.5;}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--blue);background:var(--paper);box-shadow:0 0 0 3px rgba(58,90,146,.1);
+}
+.field .hint{font-size:11px;color:var(--text-faint);}
+.field-count{font-size:11px;color:var(--text-faint);text-align:right;}
+.rating-star{font-size:30px;line-height:1;color:var(--border);transition:.12s;}
+.rating-star:hover,.rating-star.on{color:var(--amber);}
+.upload-chip{
+  display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:500;
+  background:var(--blue-tint);color:var(--blue);padding:6px 11px;border-radius:8px;margin:0 6px 6px 0;
+}
+.upload-chip svg{cursor:pointer;}
+
+/* inline category banner */
+.cat-banner{
+  display:none;align-items:flex-start;gap:13px;
+  padding:14px 16px;border-radius:11px;margin-bottom:16px;
+  background:var(--red-tint);border:1px solid #f0cfcf;
+  animation:slidedown .35s var(--ease);
+}
+.cat-banner.show{display:flex;}
+.cat-banner.info{background:var(--info-tint);border-color:#cfe0f0;}
+.cat-banner .cb-ic{
+  width:34px;height:34px;border-radius:9px;display:grid;place-items:center;flex-shrink:0;
+  background:#fff;color:var(--red-muted);
+}
+.cat-banner.info .cb-ic{color:var(--info);}
+.cat-banner .cb-tx b{font-size:13px;display:block;margin-bottom:2px;color:var(--text);}
+.cat-banner .cb-tx p{font-size:12.5px;color:var(--text-mid);margin-bottom:8px;}
+.cat-banner .cb-link{
+  font-size:12px;font-weight:600;color:var(--red-muted);display:inline-flex;align-items:center;gap:5px;
+}
+.cat-banner.info .cb-link{color:var(--info);}
+@keyframes slidedown{from{opacity:0;transform:translateY(-7px);}to{opacity:1;transform:translateY(0);}}
+
+/* upload */
+.upload{
+  border:1.6px dashed var(--border);border-radius:11px;padding:18px;
+  display:flex;align-items:center;gap:13px;background:var(--offwhite);
+  transition:.16s var(--ease);cursor:pointer;
+}
+.upload:hover{border-color:var(--blue);background:var(--blue-tint);}
+.upload .up-ic{
+  width:38px;height:38px;border-radius:9px;background:var(--paper);border:1px solid var(--border-soft);
+  display:grid;place-items:center;color:var(--blue);flex-shrink:0;
+}
+.upload b{font-size:12.5px;display:block;}
+.upload span{font-size:11.5px;color:var(--text-soft);}
+
+.wfc-foot{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding-top:18px;margin-top:4px;border-top:1px solid var(--border-soft);
+}
+.wfc-foot .ff-note{font-size:11.5px;color:var(--text-faint);display:flex;align-items:center;gap:7px;max-width:280px;}
+
+/* expectation panel */
+.expect-panel{
+  background:var(--navy);border-radius:var(--r-lg);overflow:hidden;
+  box-shadow:var(--shadow-md);position:sticky;top:84px;
+}
+.ep-head{padding:20px 22px 16px;border-bottom:1px solid rgba(255,255,255,.08);}
+.ep-head .eyebrow{margin-bottom:10px;}
+.ep-head h4{font-size:16px;color:#fff;}
+.ep-head .ep-tag{font-size:12px;color:rgba(255,255,255,.55);margin-top:3px;}
+.ep-steps{padding:8px 22px 14px;}
+.ep-step{display:flex;gap:13px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.ep-step:last-child{border-bottom:none;}
+.ep-step .es-ic{
+  width:30px;height:30px;border-radius:8px;flex-shrink:0;
+  background:rgba(255,255,255,.07);display:grid;place-items:center;color:#9fc0e8;
+}
+.ep-step b{font-size:13px;color:#fff;display:block;margin-bottom:2px;}
+.ep-step p{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.45;}
+.ep-faq{background:rgba(255,255,255,.04);padding:16px 22px;border-top:1px solid rgba(255,255,255,.08);}
+.ep-faq .epf-label{
+  font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:10px;
+}
+.ep-faq-item{
+  display:flex;align-items:center;gap:9px;padding:9px 0;
+  font-size:12.5px;color:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.05);
+  transition:.15s;
+}
+.ep-faq-item:last-child{border-bottom:none;}
+.ep-faq-item:hover{color:#fff;}
+.ep-faq-item svg{margin-left:auto;color:rgba(255,255,255,.3);}
+
+.ws-note{
+  margin-top:18px;display:flex;align-items:center;gap:14px;
+  background:var(--cream);border:1px solid var(--border);border-radius:13px;
+  padding:14px 18px;
+}
+.ws-note .wn-ic{width:34px;height:34px;border-radius:9px;background:var(--paper);display:grid;place-items:center;color:var(--red-muted);flex-shrink:0;}
+.ws-note p{font-size:12.5px;color:var(--text-mid);flex:1;}
+.ws-note p b{color:var(--text);}
+
+/* ============ MISC SHARED ============ */
+.is-hidden{display:none !important;}
+.fade-in{animation:fadein .4s var(--ease);}
+@keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+
+/* ============ TRACK SECTION ============ */
+.track-sec{background:var(--cream);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft);}
+.track-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:46px;align-items:center;}
+.track-grid.expanded{grid-template-columns:1fr;}
+.track-left h2{font-size:32px;margin-bottom:16px;}
+.track-stages{margin:22px 0 24px;}
+.track-stage{display:flex;gap:14px;padding:11px 0;}
+.track-stage .ts-num{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:1.6px solid var(--border);background:var(--paper);
+  display:grid;place-items:center;font-size:11px;font-weight:700;color:var(--text-soft);
+}
+.track-stage.done .ts-num{background:var(--green);border-color:var(--green);color:#fff;}
+.track-stage b{font-size:13.5px;display:block;}
+.track-stage p{font-size:12px;color:var(--text-soft);}
+.track-reassure{
+  display:flex;align-items:center;gap:11px;background:var(--paper);
+  border:1px solid var(--border);border-radius:12px;padding:13px 15px;
+}
+.track-reassure svg{color:var(--green);flex-shrink:0;}
+.track-reassure p{font-size:12.5px;color:var(--text-mid);}
+
+/* tracking card */
+.track-card{
+  background:var(--navy);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);
+  overflow:hidden;transition:.4s var(--ease);
+}
+.tc-head{padding:24px 26px 18px;border-bottom:1px solid rgba(255,255,255,.08);}
+.tc-head h3{font-size:19px;color:#fff;margin-bottom:5px;}
+.tc-head p{font-size:12.5px;color:rgba(255,255,255,.55);}
+.tc-body{padding:22px 26px 26px;}
+.tc-field{margin-bottom:15px;}
+.tc-field label{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.6);display:block;margin-bottom:6px;}
+.tc-field input{
+  width:100%;height:44px;padding:0 14px;border-radius:10px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  color:#fff;outline:none;transition:.16s;
+}
+.tc-field input::placeholder{color:rgba(255,255,255,.32);}
+.tc-field input:focus{border-color:#7fa8db;background:rgba(255,255,255,.1);}
+.tc-hint{
+  display:flex;align-items:center;gap:7px;font-size:11px;color:rgba(255,255,255,.4);margin-top:14px;
+}
+.tc-sample{
+  margin-top:6px;font-size:11px;color:rgba(255,255,255,.5);
+}
+.tc-sample b{color:#9fc0e8;cursor:pointer;border-bottom:1px dashed rgba(159,192,232,.5);}
+
+/* expanded timeline */
+.tc-expanded{display:none;}
+.tc-expanded.show{display:block;}
+.tce-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:18px 26px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08);
+  flex-wrap:wrap;
+}
+.tce-bar .tceb-l b{font-size:15px;color:#fff;display:block;}
+.tce-bar .tceb-l span{font-size:11.5px;color:rgba(255,255,255,.5);}
+.tce-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:0;}
+.tce-timeline{padding:24px 26px;}
+.tce-tl-label{
+  font-size:10.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);margin-bottom:18px;
+}
+.tl-item{display:flex;gap:15px;position:relative;padding-bottom:22px;}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{
+  content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;
+  background:rgba(255,255,255,.1);
+}
+.tl-item:last-child::before{display:none;}
+.tl-dot{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;z-index:1;
+  display:grid;place-items:center;
+}
+.tl-dot.done{background:var(--green);color:#fff;}
+.tl-dot.current{background:var(--amber);color:#fff;box-shadow:0 0 0 5px rgba(189,132,42,.2);}
+.tl-dot.pending{background:rgba(255,255,255,.08);border:1.6px solid rgba(255,255,255,.16);}
+.tl-tx b{font-size:13.5px;color:#fff;display:flex;align-items:center;gap:8px;}
+.tl-tx .tl-time{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px;}
+.tl-tx p{font-size:12px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.45;}
+.tce-side{padding:24px 26px;background:rgba(0,0,0,.16);border-left:1px solid rgba(255,255,255,.07);}
+.tce-meta{margin-bottom:18px;}
+.tce-meta-label{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:7px;}
+.tce-meta-row{display:flex;align-items:center;gap:9px;padding:7px 0;font-size:12.5px;color:rgba(255,255,255,.82);}
+.tce-meta-row svg{color:rgba(255,255,255,.4);flex-shrink:0;}
+.tce-actions{display:flex;flex-direction:column;gap:9px;margin-top:20px;}
+.tce-act{
+  display:flex;align-items:center;gap:10px;padding:11px 13px;border-radius:10px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:#fff;font-size:12.5px;font-weight:600;transition:.16s;width:100%;
+}
+.tce-act:hover{background:rgba(255,255,255,.12);}
+.tce-act svg{color:#9fc0e8;}
+.tce-act.primary{background:var(--red);border-color:var(--red);}
+.tce-act.primary:hover{background:var(--red-deep);}
+.tce-act.primary svg{color:#fff;}
+.tce-comm{margin-top:20px;}
+.tce-comm-item{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:11px 13px;margin-bottom:8px;
+}
+.tce-comm-item .cc-top{display:flex;justify-content:space-between;font-size:10.5px;color:rgba(255,255,255,.45);margin-bottom:4px;}
+.tce-comm-item p{font-size:12px;color:rgba(255,255,255,.78);line-height:1.45;}
+
+/* ============ MODAL / OTP ============ */
+.overlay{
+  position:fixed;inset:0;background:rgba(9,27,53,.55);backdrop-filter:blur(4px);
+  z-index:200;display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;pointer-events:none;transition:opacity .25s var(--ease);
+}
+.overlay.show{opacity:1;pointer-events:auto;}
+.modal{
+  background:var(--paper);border-radius:var(--r-xl);width:100%;max-width:430px;
+  box-shadow:var(--shadow-lg);transform:translateY(16px) scale(.97);
+  transition:transform .3s var(--ease);overflow:hidden;
+}
+.overlay.show .modal{transform:none;}
+.modal-head{padding:24px 26px 0;text-align:center;}
+.modal-ic{
+  width:52px;height:52px;border-radius:13px;background:var(--blue-tint);color:var(--blue);
+  display:grid;place-items:center;margin:0 auto 14px;
+}
+.modal-head h3{font-size:18px;margin-bottom:6px;}
+.modal-head p{font-size:13px;color:var(--text-soft);}
+.modal-head p b{color:var(--text);}
+.modal-body{padding:22px 26px 26px;}
+.otp-row{display:flex;gap:9px;justify-content:center;margin:6px 0 16px;}
+.otp-cell{
+  width:46px;height:54px;border:1.6px solid var(--border);border-radius:11px;
+  text-align:center;font-size:21px;font-weight:700;background:var(--offwhite);outline:none;
+  transition:.15s var(--ease);
+}
+.otp-cell:focus{border-color:var(--blue);background:var(--paper);box-shadow:0 0 0 3px rgba(58,90,146,.12);}
+.otp-cell.filled{border-color:var(--blue);background:var(--paper);}
+.otp-meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--text-soft);margin-bottom:18px;}
+.otp-meta .resend{color:var(--blue);font-weight:600;}
+.otp-err{
+  font-size:12px;color:var(--red);text-align:center;margin-bottom:12px;display:none;
+  align-items:center;gap:6px;justify-content:center;
+}
+.otp-err.show{display:flex;}
+.modal-close{
+  position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;
+  display:grid;place-items:center;color:var(--text-soft);background:var(--grey-50);transition:.15s;
+}
+.modal-close:hover{background:var(--cream-deep);color:var(--text);}
+.modal{position:relative;}
+
+/* ============ ESCALATION MATRIX ============ */
+.esc-list{margin-top:30px;}
+.esc-row{
+  display:grid;grid-template-columns:54px 1.5fr 2fr 1fr auto;gap:20px;align-items:center;
+  padding:20px 24px;background:var(--paper);border:1px solid var(--border);
+  border-radius:14px;margin-bottom:10px;transition:.18s var(--ease);
+}
+.esc-row:hover{box-shadow:var(--shadow-sm);border-color:#d8d1bf;}
+.esc-lvl{
+  width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;
+  display:grid;place-items:center;font-family:var(--serif);font-size:17px;font-weight:600;
+}
+.esc-row[data-lvl="4"] .esc-lvl{background:var(--indigo);}
+.esc-role b{font-size:14.5px;display:block;}
+.esc-role span{font-size:11.5px;color:var(--text-faint);font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+.esc-desc{font-size:12.5px;color:var(--text-mid);line-height:1.5;}
+.esc-time{display:flex;flex-direction:column;gap:4px;}
+.esc-time .et-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);}
+.esc-time .et-val{font-size:13px;font-weight:600;color:var(--navy);}
+.esc-note{
+  margin-top:14px;font-size:12px;color:var(--text-soft);display:flex;align-items:center;gap:8px;
+  padding:12px 16px;background:var(--info-tint);border-radius:11px;border:1px solid #d6e4f1;
+}
+
+/* ============ FAQ ============ */
+.faq-sec{background:var(--navy);color:#fff;}
+.faq-sec .sec-title{color:#fff;}
+.faq-sec .sec-sub{color:rgba(255,255,255,.6);}
+.faq-tabs{display:flex;gap:4px;background:rgba(255,255,255,.06);padding:5px;border-radius:12px;width:fit-content;margin:24px 0 20px;}
+.faq-tab{
+  padding:9px 18px;border-radius:8px;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.6);transition:.16s;
+}
+.faq-tab.active{background:#fff;color:var(--navy);}
+.faq-search{
+  display:flex;align-items:center;gap:11px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:0 16px;height:50px;margin-bottom:18px;
+}
+.faq-search svg{color:rgba(255,255,255,.5);flex-shrink:0;}
+.faq-search input{flex:1;background:transparent;border:none;outline:none;color:#fff;font-size:14.5px;}
+.faq-search input::placeholder{color:rgba(255,255,255,.38);}
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:12px;overflow:hidden;transition:.16s;
+}
+.faq-item.open{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16);}
+.faq-q{
+  display:flex;align-items:center;gap:13px;padding:16px 18px;cursor:pointer;
+}
+.faq-q .fq-tag{
+  font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:5px;
+  background:rgba(127,168,219,.16);color:#9fc0e8;flex-shrink:0;text-transform:uppercase;
+}
+.faq-q b{font-size:14px;flex:1;font-weight:500;}
+.faq-q .fq-chev{color:rgba(255,255,255,.4);transition:transform .25s var(--ease);flex-shrink:0;}
+.faq-item.open .fq-chev{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s var(--ease);}
+.faq-a-in{padding:0 18px 17px 18px;font-size:13px;color:rgba(255,255,255,.7);line-height:1.6;}
+.faq-a-in .faq-actions{display:flex;gap:8px;margin-top:13px;flex-wrap:wrap;}
+.faq-mini-btn{
+  font-size:11.5px;font-weight:600;padding:7px 12px;border-radius:8px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;
+  display:inline-flex;align-items:center;gap:6px;transition:.15s;
+}
+.faq-mini-btn:hover{background:rgba(255,255,255,.16);}
+.faq-mini-btn.red{background:var(--red);border-color:var(--red);}
+.faq-empty{text-align:center;padding:40px;color:rgba(255,255,255,.45);font-size:13px;}
+
+/* quick actions grid */
+.qa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.qa-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);
+  border-radius:13px;padding:18px;transition:.18s var(--ease);
+}
+.qa-card:hover{background:rgba(255,255,255,.08);transform:translateY(-3px);border-color:rgba(255,255,255,.18);}
+.qa-ic{
+  width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.07);
+  display:grid;place-items:center;color:#9fc0e8;margin-bottom:13px;
+}
+.qa-card.urgent .qa-ic{background:rgba(207,34,54,.16);color:#ef8b96;}
+.qa-card b{font-size:14px;display:block;margin-bottom:4px;}
+.qa-card p{font-size:11.5px;color:rgba(255,255,255,.55);margin-bottom:12px;line-height:1.45;}
+.qa-card .qa-go{font-size:11.5px;font-weight:600;color:#9fc0e8;display:flex;align-items:center;gap:5px;}
+
+/* ============ CONTACT CHANNELS ============ */
+.ch-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px;}
+.ch-card{
+  background:var(--paper);border:1px solid var(--border);border-radius:15px;
+  padding:20px;transition:.2s var(--ease);
+}
+.ch-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#d8d1bf;}
+.ch-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+.ch-ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;}
+.ch-card b{font-size:14.5px;display:block;margin-bottom:3px;}
+.ch-card .ch-type{font-size:12px;color:var(--text-soft);margin-bottom:14px;display:block;}
+.ch-cta{
+  display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--blue);
+  padding-top:13px;border-top:1px solid var(--border-soft);
+}
+
+/* ============ SPECIALIZED SUPPORT ============ */
+.spec-sec{background:var(--cream);border-top:1px solid var(--border-soft);}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;}
+.spec-card{
+  background:var(--paper);border:1px solid var(--border);border-radius:15px;
+  padding:22px;transition:.2s var(--ease);position:relative;
+}
+.spec-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.spec-card .sc-ic{
+  width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:15px;
+  background:var(--grey-50);color:var(--indigo);
+}
+.spec-card .sc-eyebrow{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);margin-bottom:8px;}
+.spec-card h4{font-size:16.5px;margin-bottom:7px;}
+.spec-card p{font-size:12.5px;color:var(--text-mid);line-height:1.5;margin-bottom:15px;}
+.spec-card .sc-cta{font-size:12.5px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:6px;}
+/* dominant fraud card */
+.spec-card.fraud{
+  grid-column:span 2;background:linear-gradient(140deg,#fff 0%,var(--red-tint) 130%);
+  border-color:#eccccc;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;
+}
+.spec-card.fraud .sc-ic{background:var(--red);color:#fff;width:54px;height:54px;border-radius:13px;}
+.spec-card.fraud .sc-eyebrow{color:var(--red-muted);}
+.spec-card.fraud h4{font-size:20px;}
+.spec-card.fraud .sc-cta{color:var(--red-muted);}
+.spec-card.fraud .fraud-btns{display:flex;gap:9px;margin-top:4px;flex-wrap:wrap;}
+
+/* ============ SUCCESS STATE ============ */
+.success-modal{max-width:560px;}
+.sx-banner{
+  background:linear-gradient(135deg,var(--green) 0%,#247a4a 100%);
+  padding:30px 30px 26px;text-align:center;color:#fff;position:relative;
+}
+.sx-check{
+  width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.18);
+  display:grid;place-items:center;margin:0 auto 14px;animation:pop .5s var(--ease);
+}
+@keyframes pop{0%{transform:scale(.4);opacity:0;}70%{transform:scale(1.12);}100%{transform:scale(1);opacity:1;}}
+.sx-banner h3{font-size:20px;margin-bottom:5px;}
+.sx-banner p{font-size:13px;color:rgba(255,255,255,.8);}
+.sx-body{padding:24px 30px 28px;}
+.sx-sr{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  background:var(--navy);border-radius:13px;padding:16px 18px;margin-bottom:20px;
+}
+.sx-sr .sxs-l small{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);display:block;margin-bottom:3px;}
+.sx-sr .sxs-l b{font-size:20px;color:#fff;font-family:var(--serif);letter-spacing:.02em;}
+.sx-copy{
+  display:flex;align-items:center;gap:7px;padding:9px 14px;border-radius:9px;
+  background:rgba(255,255,255,.1);color:#fff;font-size:12px;font-weight:600;transition:.15s;
+}
+.sx-copy:hover{background:rgba(255,255,255,.2);}
+.sx-previews{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.sx-prev{border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.sx-prev-head{
+  display:flex;align-items:center;gap:8px;padding:10px 13px;background:var(--grey-50);
+  border-bottom:1px solid var(--border-soft);font-size:11.5px;font-weight:600;color:var(--text-mid);
+}
+.sx-prev-body{padding:12px 13px;font-size:11.5px;color:var(--text-soft);line-height:1.5;}
+.sx-prev-body b{color:var(--text);}
+.sx-expect{
+  background:var(--surface);border:1px solid var(--border-soft);border-radius:12px;
+  padding:14px 16px;margin-bottom:20px;
+}
+.sx-expect .sxe-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin-bottom:9px;}
+.sx-expect-row{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--text-mid);padding:4px 0;}
+.sx-expect-row svg{color:var(--green);flex-shrink:0;}
+.sx-foot{display:flex;gap:10px;}
+
+/* ============ DASHBOARD CTA ============ */
+.dash-sec{
+  background:linear-gradient(165deg,var(--navy) 0%,var(--navy-deep) 100%);
+  color:#fff;
+}
+.dash-grid{display:grid;grid-template-columns:1fr 1.18fr;gap:48px;align-items:center;}
+.dash-left h2{font-size:32px;color:#fff;margin-bottom:16px;}
+.dash-left .dl-sub{font-size:14.5px;color:rgba(255,255,255,.6);margin-bottom:22px;}
+.dash-feats{display:flex;flex-direction:column;gap:11px;margin-bottom:26px;}
+.dash-feat{display:flex;align-items:center;gap:11px;font-size:13px;color:rgba(255,255,255,.82);}
+.dash-feat svg{color:#7fd3a0;flex-shrink:0;}
+.dash-panel{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r-xl);padding:20px;
+}
+.dash-panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.dash-panel-head b{font-size:13.5px;color:#fff;}
+.dash-panel-head span{font-size:11px;color:rgba(255,255,255,.45);}
+.mini-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+  border-radius:13px;padding:14px 16px;margin-bottom:9px;transition:.16s;
+}
+.mini-card:hover{background:rgba(255,255,255,.09);}
+.mini-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;}
+.mini-top .mt-id{font-size:11px;font-weight:600;color:rgba(255,255,255,.5);font-family:var(--serif);}
+.mini-card b{font-size:13.5px;color:#fff;display:block;margin-bottom:4px;}
+.mini-card .mc-meta{font-size:11px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:8px;}
+.mini-prog{display:flex;gap:3px;margin-top:9px;}
+.mini-seg{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.12);}
+.mini-seg.on{background:var(--green);}
+.mini-seg.cur{background:var(--amber);}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy-deep);color:rgba(255,255,255,.6);padding:48px 0 26px;}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);}
+.foot-col h5{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.62);padding:5px 0;transition:.15s;}
+.foot-col a:hover{color:#fff;}
+.foot-brand .logo-txt b{color:#fff;}
+.foot-brand p{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:14px;max-width:260px;line-height:1.6;}
+.foot-bottom{padding-top:22px;display:flex;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.4);flex-wrap:wrap;gap:10px;}
+
+/* ============ ASSISTANT ============ */
+.assistant-fab{
+  position:fixed;bottom:26px;right:26px;z-index:150;
+  display:flex;align-items:center;gap:10px;
+  height:48px;padding:0 16px 0 14px;border-radius:99px;
+  background:var(--paper);border:1px solid var(--border);
+  box-shadow:var(--shadow-md);opacity:.86;transition:.22s var(--ease);
+}
+.assistant-fab:hover{opacity:1;transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.assistant-fab .af-ic{
+  width:28px;height:28px;border-radius:50%;background:var(--navy);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.assistant-fab .af-ic span{width:7px;height:7px;border-radius:50%;background:#7fd3a0;}
+.assistant-fab b{font-size:12.5px;font-weight:600;color:var(--navy);}
+.assistant-fab.hidden{opacity:0;pointer-events:none;transform:scale(.8);}
+
+.assistant-drawer{
+  position:fixed;bottom:26px;right:26px;z-index:160;
+  width:374px;max-width:calc(100vw - 36px);height:558px;max-height:calc(100vh - 52px);
+  background:var(--paper);border:1px solid var(--border);border-radius:var(--r-xl);
+  box-shadow:var(--shadow-lg);display:flex;flex-direction:column;overflow:hidden;
+  transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;
+  transition:.28s var(--ease);
+}
+.assistant-drawer.open{transform:none;opacity:1;pointer-events:auto;}
+.ad-head{
+  display:flex;align-items:center;gap:11px;padding:16px 18px;
+  background:var(--navy);color:#fff;
+}
+.ad-head .adh-ic{
+  width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.1);
+  display:grid;place-items:center;flex-shrink:0;
+}
+.ad-head b{font-size:14px;display:block;}
+.ad-head small{font-size:11px;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:5px;}
+.ad-head small::before{content:"";width:6px;height:6px;border-radius:50%;background:#7fd3a0;}
+.ad-close{margin-left:auto;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:rgba(255,255,255,.6);transition:.15s;}
+.ad-close:hover{background:rgba(255,255,255,.1);color:#fff;}
+.ad-body{flex:1;overflow-y:auto;padding:18px;background:var(--surface);}
+.ad-msg{display:flex;gap:9px;margin-bottom:14px;}
+.ad-msg .adm-av{
+  width:28px;height:28px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;
+}
+.ad-msg.bot .adm-av{background:var(--navy);color:#fff;}
+.ad-msg.user{flex-direction:row-reverse;}
+.ad-msg.user .adm-av{background:var(--cream-deep);color:var(--navy);}
+.ad-bubble{
+  padding:11px 14px;border-radius:13px;font-size:13px;line-height:1.55;max-width:84%;
+}
+.ad-msg.bot .ad-bubble{background:var(--paper);border:1px solid var(--border-soft);border-top-left-radius:4px;}
+.ad-msg.user .ad-bubble{background:var(--navy);color:#fff;border-top-right-radius:4px;}
+.ad-bubble b{font-weight:600;}
+.ad-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:3px;padding-left:37px;margin-bottom:14px;}
+.ad-chip{
+  font-size:11.5px;font-weight:600;padding:7px 12px;border-radius:99px;
+  background:var(--paper);border:1px solid var(--border);color:var(--blue);transition:.15s;
+}
+.ad-chip:hover{background:var(--blue-tint);border-color:transparent;}
+.ad-foot{
+  display:flex;align-items:center;gap:9px;padding:13px 16px;
+  border-top:1px solid var(--border-soft);background:var(--paper);
+}
+.ad-foot input{
+  flex:1;height:40px;padding:0 14px;border:1px solid var(--border);border-radius:99px;
+  background:var(--offwhite);outline:none;
+}
+.ad-foot input:focus{border-color:var(--blue);}
+.ad-send{
+  width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;
+  display:grid;place-items:center;flex-shrink:0;transition:.16s;
+}
+.ad-send:hover{background:var(--navy-deep);transform:scale(1.05);}
+.ad-typing{display:flex;gap:4px;padding:13px 14px;}
+.ad-typing span{width:6px;height:6px;border-radius:50%;background:var(--text-faint);animation:typing 1.2s infinite;}
+.ad-typing span:nth-child(2){animation-delay:.15s;}
+.ad-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typing{0%,60%,100%{transform:translateY(0);opacity:.4;}30%{transform:translateY(-5px);opacity:1;}}
+
+/* embedded assistant intro strip */
+.assist-strip{
+  display:flex;align-items:center;gap:15px;
+  background:linear-gradient(120deg,var(--blue-tint) 0%,var(--surface) 100%);
+  border:1px solid #d6e2ef;border-radius:15px;padding:16px 20px;margin-top:20px;
+}
+.assist-strip .as-ic{
+  width:42px;height:42px;border-radius:11px;background:var(--navy);color:#fff;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.assist-strip .as-tx{flex:1;}
+.assist-strip .as-tx b{font-size:13.5px;display:block;}
+.assist-strip .as-tx p{font-size:12.5px;color:var(--text-mid);}
+
+/* ============ TOAST ============ */
+.toast-wrap{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);z-index:300;display:flex;flex-direction:column;gap:8px;align-items:center;}
+.toast{
+  display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:11px;
+  background:var(--navy);color:#fff;font-size:13px;font-weight:500;box-shadow:var(--shadow-lg);
+  animation:toastin .3s var(--ease);
+}
+.toast svg{color:#7fd3a0;}
+@keyframes toastin{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .wrap{padding:0 22px;}
+  .section{padding:58px 0;}
+  .hero-grid,.ws-body,.track-grid,.tce-grid,.dash-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:38px;}
+  .hero-visual{height:300px;order:-1;}
+  .expect-panel{position:static;}
+  .qa-grid,.ch-grid,.spec-grid{grid-template-columns:1fr 1fr;}
+  .spec-card.fraud{grid-column:span 2;}
+  .sec-title{font-size:27px;}
+  .esc-row{grid-template-columns:46px 1fr;gap:12px;row-gap:8px;}
+  .esc-desc,.esc-time,.esc-row .btn{grid-column:2;}
+  .hdr-search{display:none;}
+  .sx-previews{grid-template-columns:1fr;}
+}
+@media(max-width:620px){
+  .wrap{padding:0 16px;}
+  .header-in{padding:0 16px;gap:12px;}
+  .logo-txt small{display:none;}
+  .hero h1{font-size:31px;}
+  .ws-tabs{width:100%;overflow-x:auto;}
+  .qa-grid,.ch-grid,.spec-grid{grid-template-columns:1fr;}
+  .spec-card.fraud{grid-column:span 1;grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .otp-cell{width:40px;height:48px;}
+  .lang{display:none;}
+  .assistant-drawer{bottom:14px;right:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="header">
+  <div class="header-in">
+    <a href="#top" class="logo">
+      <div class="logo-mark"><span></span></div>
+      <div class="logo-txt">
+        <b>HDFC Bank</b>
+        <small>Support Resolution</small>
+      </div>
+    </a>
+    <button class="hdr-search" onclick="document.getElementById('mainSearch').focus();document.getElementById('mainSearch').scrollIntoView({block:'center'});">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <span>Search support — "money debited", "block card", "track complaint"…</span>
+      <kbd>/</kbd>
+    </button>
+    <div class="hdr-right">
+      <button class="lang">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        EN
+      </button>
+      <button class="btn-login">Log in</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="eyebrow">Grievance Redressal &amp; Support</div>
+        <h1 class="h-serif">Support &amp; Resolution<br><em>simplified.</em></h1>
+        <p class="hero-sub">One calm place to raise issues, follow progress and escalate transparently. Every channel synced to a single reference.</p>
+        <div class="hero-cta">
+          <button class="btn btn-red" onclick="scrollToId('workspace')">
+            Raise a complaint
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <button class="btn btn-ghost" onclick="scrollToId('track')">
+            Track a request
+          </button>
+        </div>
+        <div class="hero-links">
+          <a onclick="scrollToId('faq')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1-1 1.7M12 17h.01"/></svg>
+            Browse FAQs
+          </a>
+          <span class="sep"></span>
+          <a onclick="scrollToId('escalation')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+            Escalate an issue
+          </a>
+          <span class="sep"></span>
+          <a onclick="scrollToId('channels')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Contact channels
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hv-grid"></div>
+        <div class="hv-label">Resolution Ecosystem</div>
+        <div class="hv-chip hv-1">
+          <div class="ic" style="background:rgba(127,211,160,.16);color:#7fd3a0;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <div><b>Complaint acknowledged</b><small>SR-48213 · within 4 hrs</small></div>
+        </div>
+        <div class="hv-chip hv-2">
+          <div class="ic" style="background:rgba(189,132,42,.18);color:#e0b069;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div><b>Under review</b><small>Disputes desk · Tier 2</small></div>
+        </div>
+        <div class="hv-chip hv-3">
+          <div class="ic" style="background:rgba(127,168,219,.18);color:#9fc0e8;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+          </div>
+          <div><b>Routed intelligently</b><small>Matched to right team</small></div>
+        </div>
+        <div class="hv-prog">
+          <div class="hv-prog-top">
+            <b>Resolution progress</b>
+            <span>Stage 3 of 5</span>
+          </div>
+          <div class="hv-track">
+            <div class="hv-seg on"></div>
+            <div class="hv-seg on"></div>
+            <div class="hv-seg cur"></div>
+            <div class="hv-seg"></div>
+            <div class="hv-seg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTELLIGENT SUPPORT SEARCH -->
+    <div class="searchbox reveal">
+      <div class="search-in">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input id="mainSearch" type="text" autocomplete="off"
+          placeholder="Describe what you need in plain words — we'll guide you to the right step" />
+        <button class="search-go" onclick="runSearch()">
+          Get help
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="search-tags">
+        <button class="search-tag" onclick="quickSearch('money debited but not credited')">Money debited but not credited</button>
+        <button class="search-tag" onclick="quickSearch('block my card')">Block my card</button>
+        <button class="search-tag" onclick="quickSearch('track my complaint')">Track my complaint</button>
+        <button class="search-tag" onclick="quickSearch('UPI failed')">UPI payment failed</button>
+        <button class="search-tag" onclick="quickSearch('update KYC')">Update KYC</button>
+      </div>
+      <div class="search-results" id="searchResults">
+        <div class="sr-inner" id="searchInner"></div>
+        <div class="sr-cta" id="searchCta"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT WORKSPACE ============ -->
+<section class="section" id="workspace">
+  <div class="wrap">
+    <div class="ws-head reveal">
+      <div>
+        <div class="eyebrow">Support Workspace</div>
+        <h2 class="sec-title h-serif">Choose a workspace, <em>tell us what happened.</em></h2>
+        <p class="sec-sub">Four operational folders — complaints, queries, service requests and feedback. Each tunes its form, guidance and routing intelligently.</p>
+      </div>
+      <div class="ws-tabs" role="tablist">
+        <button class="ws-tab active" data-tab="complaint" onclick="switchTab('complaint')">
+          <span class="tnum">01</span> Complaint
+        </button>
+        <button class="ws-tab" data-tab="query" onclick="switchTab('query')">
+          <span class="tnum">02</span> Query
+        </button>
+        <button class="ws-tab" data-tab="request" onclick="switchTab('request')">
+          <span class="tnum">03</span> Service Request
+        </button>
+        <button class="ws-tab" data-tab="feedback" onclick="switchTab('feedback')">
+          <span class="tnum">04</span> Feedback
+        </button>
+      </div>
+    </div>
+
+    <div class="ws-body reveal">
+      <!-- FORM CARD -->
+      <div class="ws-form-card">
+        <div class="wfc-head">
+          <h3 id="wfcTitle">File a detailed complaint</h3>
+          <p id="wfcDesc">For unresolved issues that need investigation, a reference number and tracked resolution.</p>
+        </div>
+        <div class="wfc-body">
+
+          <!-- ===== COMPLAINT FORM ===== -->
+          <form id="form-complaint" class="ws-form" onsubmit="submitForm(event,'complaint')">
+            <div class="cat-banner" id="catBanner">
+              <div class="cb-ic">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+              </div>
+              <div class="cb-tx">
+                <b id="cbTitle">Fraud-related concerns may resolve faster through dedicated pathways.</b>
+                <p id="cbText">Specialist desks operate outside the standard queue with priority handling and direct regulatory routing.</p>
+                <a class="cb-link" onclick="scrollToId('specialized')">
+                  View specialised support
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Full name <span class="req">*</span></label>
+                <input type="text" placeholder="As registered with the bank" required />
+              </div>
+              <div class="field">
+                <label>Registered mobile <span class="req">*</span></label>
+                <input type="tel" placeholder="10-digit number" maxlength="10" required />
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Account / Card number <span class="req">*</span></label>
+                <input type="text" placeholder="Last 4 digits are sufficient" required />
+              </div>
+              <div class="field">
+                <label>Issue category <span class="req">*</span></label>
+                <select id="catSelect" onchange="onCategoryChange()" required>
+                  <option value="">Select a category</option>
+                  <option value="normal">Failed / delayed transaction</option>
+                  <option value="normal">Net Banking / Mobile app</option>
+                  <option value="normal">Loan or EMI servicing</option>
+                  <option value="normal">Charges &amp; fees dispute</option>
+                  <option value="fraud">Fraud / Unauthorised transaction</option>
+                  <option value="fraud">Cybercrime related</option>
+                  <option value="fraud">Card blocked / compromised</option>
+                  <option value="demat">Demat / Securities grievance</option>
+                  <option value="harassment">Mis-selling / Harassment</option>
+                </select>
+              </div>
+            </div>
+            <div class="field full" style="margin-bottom:16px;">
+              <label>What happened? <span class="req">*</span></label>
+              <textarea id="complaintDesc" placeholder="Describe the issue — include dates, amounts and any reference numbers you have." oninput="countChars(this)" required></textarea>
+              <div class="field-count"><span id="charCount">0</span> / 800 · be specific, it speeds up routing</div>
+            </div>
+            <div class="field full" style="margin-bottom:4px;">
+              <label>Supporting documents</label>
+              <label class="upload" for="upload-input">
+                <div class="up-ic">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                </div>
+                <div>
+                  <b>Drag a statement, screenshot or letter — or browse</b>
+                  <span>PDF, JPG or PNG · up to 10 MB each</span>
+                </div>
+              </label>
+              <input type="file" id="upload-input" hidden multiple onchange="onUpload(this)" />
+              <div id="uploadList" style="margin-top:8px;"></div>
+            </div>
+            <div class="wfc-foot">
+              <div class="ff-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Encrypted &amp; handled under HDFC's grievance policy.
+              </div>
+              <button type="submit" class="btn btn-red">
+                Submit complaint
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- ===== QUERY FORM ===== -->
+          <form id="form-query" class="ws-form is-hidden" onsubmit="submitForm(event,'query')">
+            <div class="cat-banner info show" style="margin-bottom:16px;">
+              <div class="cb-ic">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1-1 1.7M12 17h.01"/></svg>
+              </div>
+              <div class="cb-tx">
+                <b>Not sure if this needs a complaint?</b>
+                <p>Queries get a guided answer first — most are resolved without a reference number.</p>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Topic <span class="req">*</span></label>
+                <select required>
+                  <option value="">Select a topic</option>
+                  <option>Account &amp; balance information</option>
+                  <option>Cards &amp; limits</option>
+                  <option>Net Banking / Mobile app help</option>
+                  <option>Charges &amp; interest clarification</option>
+                  <option>Loan &amp; EMI questions</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Preferred response mode</label>
+                <select>
+                  <option>Email</option>
+                  <option>SMS</option>
+                  <option>Call back</option>
+                </select>
+              </div>
+            </div>
+            <div class="field full" style="margin-bottom:16px;">
+              <label>Your question <span class="req">*</span></label>
+              <textarea placeholder="Ask in your own words — for example, why a specific charge was applied." required></textarea>
+            </div>
+            <div class="wfc-foot">
+              <div class="ff-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                Typical first response within a few working hours.
+              </div>
+              <button type="submit" class="btn btn-navy">
+                Send query
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- ===== SERVICE REQUEST FORM ===== -->
+          <form id="form-request" class="ws-form is-hidden" onsubmit="submitForm(event,'request')">
+            <div class="cat-banner info show" style="margin-bottom:16px;">
+              <div class="cb-ic">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+              </div>
+              <div class="cb-tx">
+                <b>Service requests are processed, not investigated.</b>
+                <p>A standard banking action — registered instantly and routed to the relevant operations team.</p>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Request type <span class="req">*</span></label>
+                <select required>
+                  <option value="">Select a service</option>
+                  <option>New cheque book</option>
+                  <option>Address / contact update</option>
+                  <option>Account statement copy</option>
+                  <option>Debit card re-issue</option>
+                  <option>Standing instruction change</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Linked account <span class="req">*</span></label>
+                <input type="text" placeholder="Last 4 digits of account" required />
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Registered mobile <span class="req">*</span></label>
+                <input type="tel" placeholder="10-digit number" maxlength="10" required />
+              </div>
+              <div class="field">
+                <label>Preferred completion</label>
+                <select>
+                  <option>Standard timeline</option>
+                  <option>Priority — within 24 hrs</option>
+                </select>
+              </div>
+            </div>
+            <div class="field full" style="margin-bottom:16px;">
+              <label>Additional detail</label>
+              <textarea placeholder="Any specifics that help us process the request accurately." style="min-height:78px;"></textarea>
+            </div>
+            <div class="wfc-foot">
+              <div class="ff-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                You'll get a service reference and stage-wise updates.
+              </div>
+              <button type="submit" class="btn btn-navy">
+                Register service request
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- ===== FEEDBACK FORM ===== -->
+          <form id="form-feedback" class="ws-form is-hidden" onsubmit="submitForm(event,'feedback')">
+            <div class="field full" style="margin-bottom:16px;">
+              <label>How was your experience?</label>
+              <div style="display:flex;gap:8px;margin-top:2px;" id="ratingRow">
+                <button type="button" class="rating-star" data-v="1">★</button>
+                <button type="button" class="rating-star" data-v="2">★</button>
+                <button type="button" class="rating-star" data-v="3">★</button>
+                <button type="button" class="rating-star" data-v="4">★</button>
+                <button type="button" class="rating-star" data-v="5">★</button>
+              </div>
+            </div>
+            <div class="frow">
+              <div class="field">
+                <label>Feedback area</label>
+                <select>
+                  <option>Branch experience</option>
+                  <option>Digital / app experience</option>
+                  <option>Phone banking</option>
+                  <option>A staff member</option>
+                  <option>Resolution process</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Type</label>
+                <select>
+                  <option>Appreciation</option>
+                  <option>Suggestion</option>
+                  <option>Service note</option>
+                </select>
+              </div>
+            </div>
+            <div class="field full" style="margin-bottom:16px;">
+              <label>Tell us more</label>
+              <textarea placeholder="What worked well, or what could be better — we share this with the right team." required></textarea>
+            </div>
+            <div class="wfc-foot">
+              <div class="ff-note">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-6 0v4M5 9h14l1 12H4z"/></svg>
+                No reference number — feedback is reviewed, not escalated.
+              </div>
+              <button type="submit" class="btn btn-navy">
+                Share feedback
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- WHAT TO EXPECT PANEL -->
+      <aside>
+        <div class="expect-panel">
+          <div class="ep-head">
+            <div class="eyebrow light">What to expect</div>
+            <h4 id="epTitle">Your complaint journey</h4>
+            <p class="ep-tag" id="epTag">Tracked end-to-end with a reference number</p>
+          </div>
+          <div class="ep-steps" id="epSteps"></div>
+          <div class="ep-faq">
+            <div class="epf-label">Related help</div>
+            <div id="epFaqList"></div>
+          </div>
+        </div>
+        <div class="assist-strip">
+          <div class="as-ic">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="as-tx">
+            <b>Unsure which folder fits?</b>
+            <p>Ask the support assistant — it'll point you to the right path.</p>
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="openAssistant('which-folder')">Ask</button>
+        </div>
+      </aside>
+    </div>
+
+    <div class="ws-note reveal">
+      <div class="wn-ic">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      </div>
+      <p><b>Sensitive concern?</b> Fraud, blocked cards and regulatory matters route directly to dedicated specialist desks — outside the standard queue.</p>
+      <button class="btn btn-ghost btn-sm" onclick="scrollToId('specialized')">Specialised support</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRACK REQUEST ============ -->
+<section class="section track-sec" id="track">
+  <div class="wrap">
+    <div class="eyebrow reveal">Track a Request</div>
+    <div class="track-grid reveal" id="trackGrid">
+      <div class="track-left">
+        <h2 class="h-serif">Know exactly where your <em>complaint stands.</em></h2>
+        <p class="sec-sub">Every complaint moves through five operational stages — with visible ownership, timing and next steps.</p>
+        <div class="track-stages">
+          <div class="track-stage done">
+            <div class="ts-num">1</div>
+            <div><b>Complaint received</b><p>Reference issued, acknowledgement sent.</p></div>
+          </div>
+          <div class="track-stage done">
+            <div class="ts-num">2</div>
+            <div><b>Assigned to team</b><p>Routed to the right desk by category.</p></div>
+          </div>
+          <div class="track-stage">
+            <div class="ts-num">3</div>
+            <div><b>Investigation</b><p>Specialist reviews records and evidence.</p></div>
+          </div>
+          <div class="track-stage">
+            <div class="ts-num">4</div>
+            <div><b>Resolution shared</b><p>Outcome explained with reasoning.</p></div>
+          </div>
+          <div class="track-stage">
+            <div class="ts-num">5</div>
+            <div><b>Closure within SLA</b><p>Closed, with escalation open if needed.</p></div>
+          </div>
+        </div>
+        <div class="track-reassure">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9.5C7.5 19.5 3 17 3 12V5l9-3 9 3z"/></svg>
+          <p>Lagged or past SLA? Escalation is built into the timeline — no separate process to chase.</p>
+        </div>
+      </div>
+
+      <div class="track-card" id="trackCard">
+        <!-- COLLAPSED -->
+        <div class="tc-collapsed" id="tcCollapsed">
+          <div class="tc-head">
+            <h3>Track now</h3>
+            <p>Use your SR number or registered mobile — an OTP confirms it's you.</p>
+          </div>
+          <div class="tc-body">
+            <div class="tc-field">
+              <label>SR / Reference number</label>
+              <input type="text" id="srInput" placeholder="e.g. SR-48213" />
+            </div>
+            <div class="tc-field">
+              <label>Registered mobile number</label>
+              <input type="tel" id="trackMobile" placeholder="10-digit number" maxlength="10" />
+            </div>
+            <button class="btn btn-red" style="width:100%;margin-top:6px;" onclick="startTrack()">
+              Track my request
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+            <div class="tc-hint">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              We never display full account details on this screen.
+            </div>
+            <div class="tc-sample">Demo: try <b onclick="fillSample()">SR-48213</b> with any 10-digit number.</div>
+          </div>
+        </div>
+        <!-- EXPANDED -->
+        <div class="tc-expanded" id="tcExpanded">
+          <div class="tce-bar">
+            <div class="tceb-l">
+              <b>SR-48213 · UPI debit not credited</b>
+              <span>Raised 18 May 2026 · Disputes &amp; Chargebacks desk</span>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <span class="chip chip-amber"><span class="chip-dot"></span> Under investigation</span>
+              <button class="tce-act" style="width:auto;" onclick="collapseTrack()">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                Close
+              </button>
+            </div>
+          </div>
+          <div class="tce-grid">
+            <div class="tce-timeline">
+              <div class="tce-tl-label">Complaint timeline</div>
+              <div class="tl-item">
+                <div class="tl-dot done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="tl-tx">
+                  <b>Complaint received</b>
+                  <div class="tl-time">18 May 2026 · 10:24 AM</div>
+                  <p>Reference SR-48213 generated. Acknowledgement sent via SMS and email.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot done"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div>
+                <div class="tl-tx">
+                  <b>Assigned to team</b>
+                  <div class="tl-time">18 May 2026 · 1:12 PM</div>
+                  <p>Routed to the Disputes &amp; Chargebacks desk. Owner: R. Menon (Tier 2).</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot current"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+                <div class="tl-tx">
+                  <b>Investigation in progress <span class="chip chip-amber" style="height:20px;"><span class="chip-dot"></span> Current</span></b>
+                  <div class="tl-time">Started 19 May 2026 · 9:40 AM</div>
+                  <p>Chargeback raised with the beneficiary bank under NPCI dispute rules. Awaiting settlement confirmation.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot pending"></div>
+                <div class="tl-tx">
+                  <b>Resolution shared</b>
+                  <div class="tl-time">Expected by 23 May 2026</div>
+                  <p>Outcome and reasoning will be shared here and over email.</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot pending"></div>
+                <div class="tl-tx">
+                  <b>Closure within SLA</b>
+                  <div class="tl-time">SLA target · 25 May 2026</div>
+                  <p>Closed once you confirm, or auto-closed with escalation kept open.</p>
+                </div>
+              </div>
+            </div>
+            <div class="tce-side">
+              <div class="tce-meta">
+                <div class="tce-meta-label">Case details</div>
+                <div class="tce-meta-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a7 7 0 0 1 14 0v1"/></svg>
+                  Owner — R. Menon, Disputes Tier 2
+                </div>
+                <div class="tce-meta-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                  SLA — 7 working days · 4 elapsed
+                </div>
+                <div class="tce-meta-row">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  Escalation eligible from 25 May 2026
+                </div>
+              </div>
+              <div class="tce-actions">
+                <button class="tce-act primary" onclick="toast('A secure upload link has been sent to your registered email.')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                  Upload a document
+                </button>
+                <button class="tce-act" onclick="toast('Your response has been added to the case thread.')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Respond to the team
+                </button>
+                <button class="tce-act" onclick="scrollToId('escalation')">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  View escalation options
+                </button>
+              </div>
+              <div class="tce-comm">
+                <div class="tce-meta-label">Communication history</div>
+                <div class="tce-comm-item">
+                  <div class="cc-top"><span>HDFC Support</span><span>19 May · 9:42 AM</span></div>
+                  <p>We've raised a chargeback with the beneficiary bank. NPCI timelines apply — we'll update you on settlement.</p>
+                </div>
+                <div class="tce-comm-item">
+                  <div class="cc-top"><span>You</span><span>18 May · 10:30 AM</span></div>
+                  <p>Attached the UPI transaction screenshot showing debit reference 4291XXXX.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESCALATION MATRIX ============ -->
+<section class="section" id="escalation">
+  <div class="wrap">
+    <div class="eyebrow reveal">Escalation Matrix</div>
+    <div class="reveal">
+      <h2 class="sec-title h-serif">Transparent paths if <em>resolution feels slower.</em></h2>
+      <p class="sec-sub">Each level opens at a defined SLA. Escalate one step at a time — every previous interaction stays linked.</p>
+    </div>
+    <div class="esc-list reveal">
+      <div class="esc-row" data-lvl="1">
+        <div class="esc-lvl">1</div>
+        <div class="esc-role"><b>Customer Care &amp; Branch</b><span>First point of contact</span></div>
+        <div class="esc-desc">Raise and track complaints through the support workspace or your home branch for everyday concerns.</div>
+        <div class="esc-time"><span class="et-label">Resolution</span><span class="et-val">3–5 working days</span></div>
+        <button class="btn btn-ghost btn-sm" onclick="openAssistant('escalation-1')">Know more</button>
+      </div>
+      <div class="esc-row" data-lvl="2">
+        <div class="esc-lvl">2</div>
+        <div class="esc-role"><b>Grievance Redressal Officer</b><span>Level 2 · Regional</span></div>
+        <div class="esc-desc">If unresolved or past SLA, the Grievance Officer reviews the case with full history and ownership.</div>
+        <div class="esc-time"><span class="et-label">Escalation window</span><span class="et-val">After 5 days</span></div>
+        <button class="btn btn-ghost btn-sm" onclick="openAssistant('escalation-2')">Know more</button>
+      </div>
+      <div class="esc-row" data-lvl="3">
+        <div class="esc-lvl">3</div>
+        <div class="esc-role"><b>Principal Nodal Officer</b><span>Level 3 · Apex bank</span></div>
+        <div class="esc-desc">The bank's apex grievance authority. Handles matters unresolved at regional level with a final position.</div>
+        <div class="esc-time"><span class="et-label">Escalation window</span><span class="et-val">After 10 days</span></div>
+        <button class="btn btn-ghost btn-sm" onclick="openAssistant('escalation-3')">Know more</button>
+      </div>
+      <div class="esc-row" data-lvl="4">
+        <div class="esc-lvl">4</div>
+        <div class="esc-role"><b>RBI Ombudsman</b><span>External · Regulatory</span></div>
+        <div class="esc-desc">Independent regulatory redressal under the RBI Integrated Ombudsman Scheme, free of cost to customers.</div>
+        <div class="esc-time"><span class="et-label">Eligible after</span><span class="et-val">30 days / final reply</span></div>
+        <button class="btn btn-ghost btn-sm" onclick="window.open('https://cms.rbi.org.in','_blank')">Visit CMS</button>
+      </div>
+    </div>
+    <div class="esc-note reveal">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+      Escalation is informational — you're never penalised for raising it, and earlier interactions are always carried forward.
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ + QUICK ACTIONS ============ -->
+<section class="section faq-sec" id="faq">
+  <div class="wrap">
+    <div class="eyebrow light reveal">Self-Service</div>
+    <div class="reveal">
+      <h2 class="sec-title h-serif">Most things resolve <em style="color:#9fc0e8;">without a ticket.</em></h2>
+      <p class="sec-sub">Search the knowledge base or trigger a quick action — answers are mapped to support paths.</p>
+    </div>
+    <div class="faq-tabs reveal">
+      <button class="faq-tab active" data-ftab="faqs" onclick="switchFaqTab('faqs')">FAQs</button>
+      <button class="faq-tab" data-ftab="actions" onclick="switchFaqTab('actions')">Quick Actions</button>
+    </div>
+
+    <div id="faqPane" class="reveal">
+      <div class="faq-search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="faqSearch" placeholder="Search the knowledge base — &quot;UPI&quot;, &quot;KYC&quot;, &quot;card blocked&quot;, &quot;statement&quot;…" oninput="filterFaqs()" />
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+
+    <div id="actionsPane" class="reveal is-hidden">
+      <div class="qa-grid">
+        <div class="qa-card urgent">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+          <b>Block a card</b>
+          <p>Instantly freeze a lost, stolen or compromised card.</p>
+          <a class="qa-go" onclick="toast('Card-block flow opened — confirm the last 4 digits to proceed.')">Block now →</a>
+        </div>
+        <div class="qa-card">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+          <b>Reset password</b>
+          <p>Recover Net Banking or app access securely.</p>
+          <a class="qa-go" onclick="toast('A secure reset link has been sent to your registered email.')">Reset now →</a>
+        </div>
+        <div class="qa-card">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div>
+          <b>Update KYC</b>
+          <p>Refresh ID and address details to stay compliant.</p>
+          <a class="qa-go" onclick="toast('KYC update started — upload your documents to continue.')">Start KYC →</a>
+        </div>
+        <div class="qa-card">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></div>
+          <b>Download statement</b>
+          <p>Get account statements for any period instantly.</p>
+          <a class="qa-go" onclick="toast('Select a date range — your statement PDF is being prepared.')">Download →</a>
+        </div>
+        <div class="qa-card">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+          <b>Raise a dispute</b>
+          <p>Flag a transaction you don't recognise for review.</p>
+          <a class="qa-go" onclick="scrollToId('workspace')">Open dispute →</a>
+        </div>
+        <div class="qa-card">
+          <div class="qa-ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <b>Update mobile / email</b>
+          <p>Keep contact details current for alerts and OTPs.</p>
+          <a class="qa-go" onclick="toast('Contact update opened — an OTP will verify the new number.')">Update now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CHANNELS ============ -->
+<section class="section" id="channels">
+  <div class="wrap">
+    <div class="eyebrow reveal">Contact Channels</div>
+    <div class="reveal">
+      <h2 class="sec-title h-serif">Choose the channel that <em>works best for you.</em></h2>
+      <p class="sec-sub">Every channel shares your complaint history and reference number, so you can switch freely without repeating yourself.</p>
+    </div>
+    <div class="ch-grid reveal">
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#e7f3ec;color:#2f8a59;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.2-5.6A8.4 8.4 0 1 1 21 11.5z"/></svg></div>
+          <span class="chip chip-green"><span class="chip-dot"></span> 24×7</span>
+        </div>
+        <b>WhatsApp</b>
+        <span class="ch-type">Instant chat · quick answers &amp; tracking</span>
+        <a class="ch-cta">Start chat <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#e9f1f9;color:#2f6aa8;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg></div>
+          <span class="chip chip-blue"><span class="chip-dot"></span> 24 hrs</span>
+        </div>
+        <b>Email Support</b>
+        <span class="ch-type">Detailed reply · written record</span>
+        <a class="ch-cta">Compose email <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#f8efdc;color:#bd842a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg></div>
+          <span class="chip chip-amber"><span class="chip-dot"></span> 8AM–8PM</span>
+        </div>
+        <b>Phone Banking</b>
+        <span class="ch-type">Spoken support · IVR + agent</span>
+        <a class="ch-cta">View numbers <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#eef0f6;color:#2c3f66;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+          <span class="chip chip-green"><span class="chip-dot"></span> 24×7</span>
+        </div>
+        <b>Mobile App</b>
+        <span class="ch-type">In-app tracking · push updates</span>
+        <a class="ch-cta">Open in app <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#f8efdc;color:#bd842a;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <span class="chip chip-green"><span class="chip-dot"></span> 24×7</span>
+        </div>
+        <b>SMS Banking</b>
+        <span class="ch-type">Keyword commands · no internet</span>
+        <a class="ch-cta">See keywords <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#eef0f6;color:#2c3f66;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M9 9h.01M9 13h.01M9 17h.01"/></svg></div>
+          <span class="chip chip-blue"><span class="chip-dot"></span> Branch hrs</span>
+        </div>
+        <b>Branch Support</b>
+        <span class="ch-type">In-person · for documents &amp; KYC</span>
+        <a class="ch-cta">Locate branch <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:#e9f1f9;color:#2f6aa8;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg></div>
+          <span class="chip chip-green"><span class="chip-dot"></span> 24×7</span>
+        </div>
+        <b>Support Assistant</b>
+        <span class="ch-type">Contextual guidance · routing help</span>
+        <a class="ch-cta" onclick="openAssistant('channels')">Open assistant <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ch-card" style="background:var(--navy);border-color:var(--navy);">
+        <div class="ch-top">
+          <div class="ch-ic" style="background:rgba(255,255,255,.1);color:#9fc0e8;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        </div>
+        <b style="color:#fff;">Not sure which?</b>
+        <span class="ch-type" style="color:rgba(255,255,255,.6);">Let the assistant pick the fastest channel for your situation.</span>
+        <a class="ch-cta" style="color:#9fc0e8;border-color:rgba(255,255,255,.12);" onclick="openAssistant('channels')">Guide me <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIALIZED SUPPORT ============ -->
+<section class="section spec-sec" id="specialized">
+  <div class="wrap">
+    <div class="eyebrow reveal">Specialised Support</div>
+    <div class="reveal">
+      <h2 class="sec-title h-serif">For sensitive matters with <em>dedicated paths.</em></h2>
+      <p class="sec-sub">Fraud, regulatory and high-severity concerns route directly to specialist desks — outside the standard queue.</p>
+    </div>
+    <div class="spec-grid reveal">
+      <div class="spec-card fraud">
+        <div class="sc-ic">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <div>
+          <div class="sc-eyebrow">Priority · 24×7 desk</div>
+          <h4 class="h-serif">Fraud &amp; blocked-card response</h4>
+          <p>Suspect an unauthorised transaction or a compromised card? This bypasses the queue entirely — block instantly and a fraud specialist takes over within minutes.</p>
+          <div class="fraud-btns">
+            <button class="btn btn-red btn-sm" onclick="toast('Card block initiated — a fraud specialist will call your registered number.')">Block card &amp; report</button>
+            <button class="btn btn-ghost btn-sm" onclick="openAssistant('fraud')">Talk to the desk</button>
+          </div>
+        </div>
+      </div>
+      <div class="spec-card">
+        <div class="sc-ic" style="background:var(--info-tint);color:var(--info);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <div class="sc-eyebrow">Transaction disputes</div>
+        <h4>Online Dispute Resolution</h4>
+        <p>For UPI, IMPS and card disputes — settled under NPCI / network timelines with chargeback tracking.</p>
+        <a class="sc-cta" onclick="scrollToId('workspace')">Raise a dispute <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="spec-card">
+        <div class="sc-ic" style="background:var(--amber-tint);color:var(--amber);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+        <div class="sc-eyebrow">Securities</div>
+        <h4>Demat Grievance</h4>
+        <p>Demat, trading and securities concerns handled by the dedicated investor-services desk.</p>
+        <a class="sc-cta" onclick="scrollToId('workspace')">File a grievance <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="spec-card">
+        <div class="sc-ic" style="background:var(--red-tint);color:var(--red-muted);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg></div>
+        <div class="sc-eyebrow">Conduct</div>
+        <h4>Mis-selling / Harassment</h4>
+        <p>Concerns about staff conduct or product mis-selling go to a confidential review desk.</p>
+        <a class="sc-cta" onclick="scrollToId('workspace')">Report confidentially <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="spec-card">
+        <div class="sc-ic" style="background:var(--info-tint);color:var(--info);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="sc-eyebrow">Cybercrime</div>
+        <h4>NCCRP Portal</h4>
+        <p>For cyber-fraud, the National Cyber Crime Reporting Portal records and tracks your case.</p>
+        <a class="sc-cta" onclick="window.open('https://cybercrime.gov.in','_blank')">Go to NCCRP <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="spec-card">
+        <div class="sc-ic" style="background:#eef0f6;color:var(--indigo);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4 8 4v14M10 21v-6h4v6"/></svg></div>
+        <div class="sc-eyebrow">Regulator</div>
+        <h4>SCORES by SEBI</h4>
+        <p>Securities-market grievances can be escalated through SEBI's SCORES platform.</p>
+        <a class="sc-cta" onclick="window.open('https://scores.sebi.gov.in','_blank')">Open SCORES <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DASHBOARD CTA ============ -->
+<section class="section dash-sec">
+  <div class="wrap">
+    <div class="dash-grid">
+      <div class="dash-left reveal">
+        <div class="eyebrow light">Support Continuity</div>
+        <h2 class="h-serif">Your complete support history, <em style="color:#9fc0e8;">in one quiet dashboard.</em></h2>
+        <p class="dl-sub">Every complaint, query, request and escalation in a single calm view — so nothing slips, and you never start from scratch.</p>
+        <div class="dash-feats">
+          <div class="dash-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            Active complaints with real-time stage tracking
+          </div>
+          <div class="dash-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            Escalation snapshots — see what's eligible and when
+          </div>
+          <div class="dash-feat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+            Saved references, documents and communication threads
+          </div>
+        </div>
+        <button class="btn btn-red" onclick="toast('Sign in to open your full support dashboard.')">
+          Access support dashboard
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="dash-panel reveal">
+        <div class="dash-panel-head">
+          <b>Recent activity</b>
+          <span>Preview · 3 of 9 items</span>
+        </div>
+        <div class="mini-card">
+          <div class="mini-top">
+            <span class="mt-id">SR-48213</span>
+            <span class="chip chip-amber"><span class="chip-dot"></span> Investigation</span>
+          </div>
+          <b>UPI debit not credited</b>
+          <div class="mc-meta">Disputes desk · raised 18 May · SLA 25 May</div>
+          <div class="mini-prog"><span class="mini-seg on"></span><span class="mini-seg on"></span><span class="mini-seg cur"></span><span class="mini-seg"></span><span class="mini-seg"></span></div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-top">
+            <span class="mt-id">SR-47980</span>
+            <span class="chip chip-green"><span class="chip-dot"></span> Resolved</span>
+          </div>
+          <b>Duplicate annual fee charged</b>
+          <div class="mc-meta">Cards desk · resolved 14 May · refund issued</div>
+          <div class="mini-prog"><span class="mini-seg on"></span><span class="mini-seg on"></span><span class="mini-seg on"></span><span class="mini-seg on"></span><span class="mini-seg on"></span></div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-top">
+            <span class="mt-id">RQ-12044</span>
+            <span class="chip chip-blue"><span class="chip-dot"></span> In progress</span>
+          </div>
+          <b>Cheque book request</b>
+          <div class="mc-meta">Operations · placed 20 May · dispatch pending</div>
+          <div class="mini-prog"><span class="mini-seg on"></span><span class="mini-seg cur"></span><span class="mini-seg"></span><span class="mini-seg"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col foot-brand">
+        <div class="logo">
+          <div class="logo-mark"><span></span></div>
+          <div class="logo-txt"><b>HDFC Bank</b><small style="color:rgba(255,255,255,.4);">Support Resolution</small></div>
+        </div>
+        <p>A calm, intelligent support layer — built to reduce friction during the moments that matter most.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Support</h5>
+        <a onclick="scrollToId('workspace')">Raise a complaint</a>
+        <a onclick="scrollToId('track')">Track a request</a>
+        <a onclick="scrollToId('faq')">FAQs &amp; quick actions</a>
+        <a onclick="scrollToId('escalation')">Escalation matrix</a>
+      </div>
+      <div class="foot-col">
+        <h5>Channels</h5>
+        <a onclick="scrollToId('channels')">All contact channels</a>
+        <a onclick="scrollToId('specialized')">Specialised support</a>
+        <a onclick="openAssistant('general')">Support assistant</a>
+        <a>Branch locator</a>
+      </div>
+      <div class="foot-col">
+        <h5>Regulatory</h5>
+        <a onclick="window.open('https://cms.rbi.org.in','_blank')">RBI Ombudsman (CMS)</a>
+        <a onclick="window.open('https://scores.sebi.gov.in','_blank')">SEBI SCORES</a>
+        <a onclick="window.open('https://cybercrime.gov.in','_blank')">Cyber Crime Portal</a>
+        <a>Grievance policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 HDFC Bank · Conceptual support ecosystem prototype</span>
+      <span>This is a design prototype — not a live banking service.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OTP MODAL ============ -->
+<div class="overlay" id="otpOverlay">
+  <div class="modal">
+    <button class="modal-close" onclick="closeOtp()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="modal-head">
+      <div class="modal-ic">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <h3>Verify it's you</h3>
+      <p>We've sent a 6-digit code to your registered mobile ending <b id="otpMobile">••3421</b></p>
+    </div>
+    <div class="modal-body">
+      <div class="otp-row" id="otpRow">
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+        <input class="otp-cell" maxlength="1" inputmode="numeric" />
+      </div>
+      <div class="otp-err" id="otpErr">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        That code didn't match. Try the demo code below.
+      </div>
+      <div class="otp-meta">
+        <span>Demo code — <b style="color:var(--blue);cursor:pointer;" onclick="autofillOtp()">2&nbsp;4&nbsp;8&nbsp;1&nbsp;3&nbsp;9</b></span>
+        <span class="resend" id="otpResend">Resend in <span id="otpTimer">28</span>s</span>
+      </div>
+      <button class="btn btn-red" style="width:100%;" onclick="verifyOtp()">Verify &amp; continue</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SUCCESS MODAL ============ -->
+<div class="overlay" id="successOverlay">
+  <div class="modal success-modal">
+    <div class="sx-banner">
+      <div class="sx-check">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3 id="sxTitle">Complaint registered</h3>
+      <p id="sxSub">We've got this. Here's everything you need to follow it through.</p>
+    </div>
+    <div class="sx-body">
+      <div class="sx-sr">
+        <div class="sxs-l">
+          <small>Your reference number</small>
+          <b id="sxSR">SR-48217</b>
+        </div>
+        <button class="sx-copy" onclick="copySR()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span id="sxCopyTxt">Copy</span>
+        </button>
+      </div>
+      <div class="sx-previews">
+        <div class="sx-prev">
+          <div class="sx-prev-head">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>
+            Email confirmation
+          </div>
+          <div class="sx-prev-body">
+            <b>Subject:</b> Complaint <span id="sxSR2">SR-48217</span> registered<br>
+            Sent to m•••i@gmail.com — includes your reference, the assigned desk and expected timeline.
+          </div>
+        </div>
+        <div class="sx-prev">
+          <div class="sx-prev-head">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+            SMS alert
+          </div>
+          <div class="sx-prev-body">
+            <b>HDFCBK:</b> Complaint <span id="sxSR3">SR-48217</span> received. Track at hdfc.support — acknowledgement within 4 hrs.
+          </div>
+        </div>
+      </div>
+      <div class="sx-expect">
+        <div class="sxe-label">What happens next</div>
+        <div class="sx-expect-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          Formal acknowledgement within 4 hours
+        </div>
+        <div class="sx-expect-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          Assigned to the right specialist desk by category
+        </div>
+        <div class="sx-expect-row">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>
+          Resolution within SLA, with escalation kept open
+        </div>
+      </div>
+      <div class="sx-foot">
+        <button class="btn btn-red" style="flex:1;" onclick="closeSuccess();scrollToId('track');">Track this request</button>
+        <button class="btn btn-ghost" onclick="closeSuccess()">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<!-- ============ ASSISTANT ============ -->
+<button class="assistant-fab" id="assistantFab" onclick="openAssistant()">
+  <span class="af-ic"><span></span></span>
+  <b>Support Assistant</b>
+</button>
+
+<div class="assistant-drawer" id="assistantDrawer">
+  <div class="ad-head">
+    <div class="adh-ic">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg>
+    </div>
+    <div>
+      <b>Support Assistant</b>
+      <small>Contextual guidance</small>
+    </div>
+    <button class="ad-close" onclick="closeAssistant()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="ad-body" id="adBody"></div>
+  <div class="ad-foot">
+    <input type="text" id="adInput" placeholder="Ask about complaints, tracking, escalation…" onkeydown="if(event.key==='Enter')sendAssistant()" />
+    <button class="ad-send" onclick="sendAssistant()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+    </button>
+  </div>
+</div>
+</main>
+
+<script>
+/* ========= UTIL ========= */
+function scrollToId(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function toast(msg){
+  const w=document.getElementById('toastWrap');
+  const t=document.createElement('div');
+  t.className='toast';
+  t.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg>'+msg;
+  w.appendChild(t);
+  setTimeout(()=>{t.style.transition='.3s';t.style.opacity='0';t.style.transform='translateY(10px)';setTimeout(()=>t.remove(),300);},3400);
+}
+
+/* ========= REVEAL ON SCROLL ========= */
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ========= INTELLIGENT SEARCH ========= */
+const searchData=[
+  {kw:['money','debited','credited','not credit','failed transaction','amount deducted'],
+   title:'Money debited but not credited',
+   faqs:[
+     {ic:'blue',i:'help',t:'Why did my transaction fail but money was deducted?',d:'Failed transactions auto-reverse within 3–5 working days.',m:'FAQ'},
+     {ic:'amber',i:'clock',t:'Auto-reversal not received?',d:'Raise a dispute — we chargeback under NPCI rules.',m:'5 day SLA'}
+   ],
+   action:{ic:'red',i:'doc',t:'Raise a transaction dispute',d:'Tracked complaint with chargeback handling',m:'Recommended'},
+   eta:'Typical resolution · 5 working days',
+   cta:'This looks like a <b>failed-transaction dispute</b>. We can pre-fill a complaint with the right category.'},
+  {kw:['block','card','lost','stolen','compromised','freeze'],
+   title:'Block my card',
+   faqs:[
+     {ic:'red',i:'card',t:'Block a lost or stolen card instantly',d:'Freezes the card immediately, 24×7.',m:'Instant'},
+     {ic:'blue',i:'help',t:'Will pending transactions still go through?',d:'Authorised pending transactions may settle; new ones are stopped.',m:'FAQ'}
+   ],
+   action:{ic:'red',i:'shield',t:'Block card &amp; report fraud',d:'Routes to the 24×7 fraud desk outside the queue',m:'Priority'},
+   eta:'Card blocked instantly · specialist callback in minutes',
+   cta:'This is <b>time-sensitive</b>. Use the fraud &amp; blocked-card desk for the fastest path.'},
+  {kw:['track','status','complaint stand','where is','sr number','reference'],
+   title:'Track my complaint',
+   faqs:[
+     {ic:'blue',i:'search',t:'Track using your SR number',d:'Enter your reference and verify with an OTP.',m:'Live'},
+     {ic:'green',i:'check',t:'What do the five stages mean?',d:'Received, assigned, investigation, resolution, closure.',m:'FAQ'}
+   ],
+   action:{ic:'blue',i:'search',t:'Open the tracking panel',d:'See timeline, owner and escalation eligibility',m:'Go'},
+   eta:'Live status · updated at every stage',
+   cta:'Head to <b>Track a Request</b> — your SR number unlocks the full timeline.'},
+  {kw:['upi','imps','neft','payment','transfer','gpay','phonepe'],
+   title:'UPI payment failed',
+   faqs:[
+     {ic:'amber',i:'clock',t:'UPI payment failed but amount deducted',d:'Most reverse automatically within 48 hours.',m:'FAQ'},
+     {ic:'blue',i:'help',t:'UPI ID not working / declined',d:'Check daily limits and app permissions.',m:'Troubleshoot'}
+   ],
+   action:{ic:'red',i:'doc',t:'Raise a UPI dispute',d:'Settled under NPCI dispute timelines',m:'Recommended'},
+   eta:'NPCI dispute window · up to 5 working days',
+   cta:'For a stuck <b>UPI payment</b>, a dispute triggers an NPCI-tracked chargeback.'},
+  {kw:['kyc','update','address','document','re-kyc','verification'],
+   title:'Update KYC',
+   faqs:[
+     {ic:'blue',i:'doc',t:'How to complete re-KYC online',d:'Upload ID and address proof from the app or Net Banking.',m:'FAQ'},
+     {ic:'green',i:'check',t:'Which documents are accepted?',d:'Aadhaar, passport, voter ID and more.',m:'List'}
+   ],
+   action:{ic:'green',i:'doc',t:'Start a KYC service request',d:'Registered instantly, processed by operations',m:'Service'},
+   eta:'Processed within standard service timelines',
+   cta:'KYC is a <b>service request</b>, not a complaint — it’s processed, not investigated.'},
+  {kw:['fraud','unauthorised','unauthorized','scam','cyber','hacked'],
+   title:'Report fraud or an unauthorised transaction',
+   faqs:[
+     {ic:'red',i:'shield',t:'Report an unauthorised transaction',d:'Reported transactions are put under immediate review.',m:'Priority'},
+     {ic:'blue',i:'help',t:'What evidence helps a fraud case?',d:'Screenshots, SMS alerts and transaction references.',m:'FAQ'}
+   ],
+   action:{ic:'red',i:'shield',t:'Open the fraud &amp; cybercrime desk',d:'Bypasses the standard queue entirely',m:'24×7'},
+   eta:'Specialist response within minutes',
+   cta:'Fraud routes to a <b>dedicated 24×7 desk</b> — far faster than a standard complaint.'}
+];
+function srIcon(i){
+  const m={
+    help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1-1 1.7M12 17h.01"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
+    card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+    doc:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>',
+    shield:'<path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/>',
+    search:'<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+    check:'<path d="M20 6L9 17l-5-5"/>'
+  };
+  return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'+(m[i]||m.help)+'</svg>';
+}
+function quickSearch(q){document.getElementById('mainSearch').value=q;runSearch();}
+function runSearch(){
+  const q=document.getElementById('mainSearch').value.toLowerCase().trim();
+  const res=document.getElementById('searchResults');
+  const inner=document.getElementById('searchInner');
+  const cta=document.getElementById('searchCta');
+  if(!q){res.classList.remove('open');return;}
+  let match=searchData.find(d=>d.kw.some(k=>q.includes(k)||k.includes(q)));
+  if(!match){
+    // fuzzy by word
+    match=searchData.find(d=>d.kw.some(k=>q.split(' ').some(w=>w.length>2&&k.includes(w))));
+  }
+  if(!match){
+    inner.innerHTML='<div class="sr-head"><b>No exact match</b> — but support can still help.</div>'+
+      '<div class="sr-item" onclick="scrollToId(\'workspace\')">'+
+      '<div class="sr-ic blue">'+srIcon('doc')+'</div>'+
+      '<div class="sr-tx"><b>Describe it in the Support Workspace</b><span>We’ll route it to the right desk</span></div>'+
+      '<div class="sr-meta">Open</div></div>'+
+      '<div class="sr-item" onclick="openAssistant(\'general\')">'+
+      '<div class="sr-ic amber">'+srIcon('help')+'</div>'+
+      '<div class="sr-tx"><b>Ask the support assistant</b><span>Get guided to the right path</span></div>'+
+      '<div class="sr-meta">Chat</div></div>';
+    cta.innerHTML='<p>Still unsure? The assistant can help you pick.</p>'+
+      '<button class="btn btn-navy btn-sm" onclick="openAssistant(\'general\')">Open assistant</button>';
+    res.classList.add('open');return;
+  }
+  let html='<div class="sr-head"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" style="color:var(--blue)"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.5 5.7 21l2.3-7.1-6-4.5h7.6z"/></svg> Support paths for <b>"'+match.title+'"</b></div>';
+  html+='<div class="sr-group-label">Related help &amp; troubleshooting</div>';
+  match.faqs.forEach(f=>{
+    html+='<div class="sr-item" onclick="scrollToId(\'faq\')">'+
+      '<div class="sr-ic '+f.ic+'">'+srIcon(f.i)+'</div>'+
+      '<div class="sr-tx"><b>'+f.t+'</b><span>'+f.d+'</span></div>'+
+      '<div class="sr-meta">'+f.m+'</div></div>';
+  });
+  html+='<div class="sr-group-label">Recommended next step</div>';
+  const a=match.action;
+  html+='<div class="sr-item" style="border-color:#d9c3c3;background:#fff" onclick="scrollToId(\'workspace\')">'+
+    '<div class="sr-ic '+a.ic+'">'+srIcon(a.i)+'</div>'+
+    '<div class="sr-tx"><b>'+a.t+'</b><span>'+a.d+'</span></div>'+
+    '<div class="sr-meta" style="color:var(--red-muted)">'+a.m+'</div></div>';
+  html+='<div class="sr-group-label">Estimated resolution</div>'+
+    '<div class="sr-item" style="cursor:default">'+
+    '<div class="sr-ic green">'+srIcon('clock')+'</div>'+
+    '<div class="sr-tx"><b>'+match.eta+'</b><span>Indicative — actual timing depends on the case</span></div></div>';
+  inner.innerHTML=html;
+  cta.innerHTML='<p>'+match.cta+'</p>'+
+    '<button class="btn btn-red btn-sm" onclick="scrollToId(\'workspace\')">Continue</button>';
+  res.classList.add('open');
+}
+document.getElementById('mainSearch').addEventListener('input',function(){
+  if(this.value.trim().length>2) runSearch();
+  else document.getElementById('searchResults').classList.remove('open');
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement.tagName!=='INPUT'&&document.activeElement.tagName!=='TEXTAREA'){
+    e.preventDefault();const s=document.getElementById('mainSearch');s.focus();s.scrollIntoView({block:'center'});
+  }
+  if(e.key==='Escape'){closeOtp();closeSuccess();}
+});
+
+/* ========= WORKSPACE TABS ========= */
+const tabConfig={
+  complaint:{title:'File a detailed complaint',desc:'For unresolved issues that need investigation, a reference number and tracked resolution.',
+    epTitle:'Your complaint journey',epTag:'Tracked end-to-end with a reference number',
+    steps:[
+      ['inbox','Acknowledged in 4 hours','A formal acknowledgement with your SR number.'],
+      ['users','Assigned to the right team','Routed by category to a specialist desk.'],
+      ['shield','Resolution within SLA','Worked to a defined service-level timeline.'],
+      ['up','Transparent escalation','Escalation paths open automatically if needed.']
+    ],
+    faqs:['How long does a complaint take?','What if I miss the SLA window?','Can I add documents later?']},
+  query:{title:'Ask a quick question',desc:'For clarifications and how-to questions — most are answered without a reference number.',
+    epTitle:'How a query is handled',epTag:'Guided answer first, escalation only if needed',
+    steps:[
+      ['clock','Response within a few hours','A first reply during working hours.'],
+      ['help','Guided clarification','We ask only what’s needed to answer well.'],
+      ['users','Routed to the correct desk','Sent to the team that owns the topic.'],
+      ['up','Escalation if unresolved','Converted to a tracked complaint if required.']
+    ],
+    faqs:['Query vs complaint — which do I need?','Can a query become a complaint?','How do I get a call back?']},
+  request:{title:'Raise a service request',desc:'For standard banking actions — cheque books, updates and statements. Processed, not investigated.',
+    epTitle:'How a request is processed',epTag:'Registered instantly, processed by operations',
+    steps:[
+      ['inbox','Registered instantly','A service reference is generated at once.'],
+      ['settings','Processed by the relevant team','Handled by the right operations desk.'],
+      ['clock','Status updates at every stage','Notified as the request moves forward.'],
+      ['check','Resolved within service timelines','Completed to the standard timeline.']
+    ],
+    faqs:['How long does a cheque book take?','Can I track a service request?','Priority processing options']},
+  feedback:{title:'Share feedback',desc:'Tell us what worked — or what didn’t. Feedback shapes service, with no escalation attached.',
+    epTitle:'What we do with feedback',epTag:'Reviewed for improvement — no escalation',
+    steps:[
+      ['users','Shared with the right teams','Directed to the team it relates to.'],
+      ['eye','Reviewed for service improvement','Patterns inform how support evolves.'],
+      ['clock','Follow-up only when required','We reach out only if it helps.'],
+      ['check','No escalation needed','Feedback is not a tracked grievance.']
+    ],
+    faqs:['Where does my feedback go?','Can I appreciate a staff member?','Will I get a response?']}
+};
+function epIcon(i){
+  const m={
+    inbox:'<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5 5h14l3 7v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/>',
+    users:'<circle cx="9" cy="8" r="3.5"/><path d="M3 21v-1a6 6 0 0 1 12 0v1M17 8a3.5 3.5 0 0 1 0 7"/>',
+    shield:'<path d="M12 2l8 4v6c0 5-3.4 8.7-8 10-4.6-1.3-8-5-8-10V6z"/>',
+    up:'<path d="M12 19V5M5 12l7-7 7 7"/>',
+    clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>',
+    help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 1-1 1.7M12 17h.01"/>',
+    settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4 12H1M23 12h-3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/>',
+    check:'<path d="M20 6L9 17l-5-5"/>',
+    eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>'
+  };
+  return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'+(m[i]||m.check)+'</svg>';
+}
+function switchTab(tab){
+  document.querySelectorAll('.ws-tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===tab));
+  document.querySelectorAll('.ws-form').forEach(f=>f.classList.add('is-hidden'));
+  const form=document.getElementById('form-'+tab);
+  form.classList.remove('is-hidden');form.classList.add('fade-in');
+  setTimeout(()=>form.classList.remove('fade-in'),400);
+  const c=tabConfig[tab];
+  document.getElementById('wfcTitle').textContent=c.title;
+  document.getElementById('wfcDesc').textContent=c.desc;
+  document.getElementById('epTitle').textContent=c.epTitle;
+  document.getElementById('epTag').textContent=c.epTag;
+  document.getElementById('epSteps').innerHTML=c.steps.map(s=>
+    '<div class="ep-step"><div class="es-ic">'+epIcon(s[0])+'</div>'+
+    '<div><b>'+s[1]+'</b><p>'+s[2]+'</p></div></div>').join('');
+  document.getElementById('epFaqList').innerHTML=c.faqs.map(f=>
+    '<div class="ep-faq-item" onclick="scrollToId(\'faq\')">'+f+
+    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg></div>').join('');
+}
+switchTab('complaint');
+
+/* ========= CATEGORY-AWARE BANNER ========= */
+const catText={
+  fraud:{t:'Fraud-related concerns may resolve faster through dedicated pathways.',
+    x:'Specialist desks operate outside the standard queue with priority handling and direct regulatory routing.'},
+  demat:{t:'Demat grievances route to the dedicated investor-services desk.',
+    x:'Securities matters are handled separately from everyday banking complaints for faster, expert review.'},
+  harassment:{t:'Conduct concerns are handled by a confidential review desk.',
+    x:'Mis-selling and harassment reports bypass the standard queue and are treated with discretion.'}
+};
+function onCategoryChange(){
+  const sel=document.getElementById('catSelect');
+  const val=sel.value;
+  const banner=document.getElementById('catBanner');
+  if(catText[val]){
+    document.getElementById('cbTitle').textContent=catText[val].t;
+    document.getElementById('cbText').textContent=catText[val].x;
+    banner.classList.add('show');
+  }else{
+    banner.classList.remove('show');
+  }
+}
+
+/* ========= CHAR COUNT + UPLOAD ========= */
+function countChars(el){
+  let v=el.value;
+  if(v.length>800){v=v.slice(0,800);el.value=v;}
+  document.getElementById('charCount').textContent=v.length;
+}
+let uploadedFiles=[];
+function onUpload(input){
+  for(const f of input.files){uploadedFiles.push(f.name);}
+  renderUploads();
+  input.value='';
+}
+function renderUploads(){
+  document.getElementById('uploadList').innerHTML=uploadedFiles.map((n,i)=>
+    '<span class="upload-chip">'+
+    '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>'+
+    n+'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" onclick="removeUpload('+i+')"><path d="M18 6L6 18M6 6l12 12"/></svg></span>').join('');
+}
+function removeUpload(i){uploadedFiles.splice(i,1);renderUploads();}
+
+/* ========= RATING STARS ========= */
+let rating=0;
+document.querySelectorAll('.rating-star').forEach(star=>{
+  star.addEventListener('click',()=>{
+    rating=+star.dataset.v;
+    document.querySelectorAll('.rating-star').forEach(s=>s.classList.toggle('on',+s.dataset.v<=rating));
+  });
+});
+
+/* ========= FORM SUBMIT -> SUCCESS ========= */
+const srTitles={
+  complaint:'Complaint registered',query:'Query submitted',
+  request:'Service request registered',feedback:'Feedback received'
+};
+const srPrefix={complaint:'SR',query:'QY',request:'RQ',feedback:'FB'};
+function submitForm(e,type){
+  e.preventDefault();
+  const num=Math.floor(40000+Math.random()*9999);
+  const sr=srPrefix[type]+'-'+num;
+  if(type==='feedback'){
+    document.getElementById('sxTitle').textContent=srTitles[type];
+    document.getElementById('sxSub').textContent='Thank you — this goes straight to the team it relates to.';
+    document.getElementById('sxSR').textContent=sr;
+    document.getElementById('sxSR2').textContent=sr;
+    document.getElementById('sxSR3').textContent=sr;
+    document.querySelector('.sx-expect .sxe-label').textContent='What happens next';
+    document.querySelector('.sx-expect').innerHTML=
+      '<div class="sxe-label">What happens next</div>'+
+      ['Shared with the relevant service team','Reviewed for service improvement','Follow-up only if it would help'].map(t=>
+      '<div class="sx-expect-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'+t+'</div>').join('');
+  }else{
+    document.getElementById('sxTitle').textContent=srTitles[type];
+    document.getElementById('sxSub').textContent='We’ve got this. Here’s everything you need to follow it through.';
+    document.getElementById('sxSR').textContent=sr;
+    document.getElementById('sxSR2').textContent=sr;
+    document.getElementById('sxSR3').textContent=sr;
+    const rows=type==='request'
+      ? ['Service reference registered instantly','Processed by the relevant operations team','Stage-wise updates until completion']
+      : type==='query'
+      ? ['First response within a few working hours','Routed to the desk that owns the topic','Converted to a tracked complaint if unresolved']
+      : ['Formal acknowledgement within 4 hours','Assigned to the right specialist desk by category','Resolution within SLA, with escalation kept open'];
+    document.querySelector('.sx-expect').innerHTML=
+      '<div class="sxe-label">What happens next</div>'+rows.map(t=>
+      '<div class="sx-expect-row"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'+t+'</div>').join('');
+  }
+  document.getElementById('successOverlay').classList.add('show');
+  e.target.reset();
+  uploadedFiles=[];renderUploads();
+  document.getElementById('charCount').textContent='0';
+  document.getElementById('catBanner').classList.remove('show');
+  rating=0;document.querySelectorAll('.rating-star').forEach(s=>s.classList.remove('on'));
+}
+function closeSuccess(){document.getElementById('successOverlay').classList.remove('show');}
+function copySR(){
+  const sr=document.getElementById('sxSR').textContent;
+  navigator.clipboard&&navigator.clipboard.writeText(sr);
+  document.getElementById('sxCopyTxt').textContent='Copied';
+  setTimeout(()=>document.getElementById('sxCopyTxt').textContent='Copy',1800);
+}
+document.getElementById('successOverlay').addEventListener('click',e=>{
+  if(e.target.id==='successOverlay')closeSuccess();
+});
+
+/* ========= TRACK + OTP ========= */
+let otpTimerInt;
+function fillSample(){
+  document.getElementById('srInput').value='SR-48213';
+  document.getElementById('trackMobile').value='9876543421';
+}
+function startTrack(){
+  const sr=document.getElementById('srInput').value.trim();
+  const mob=document.getElementById('trackMobile').value.trim();
+  if(!sr){toast('Enter your SR / reference number to continue.');return;}
+  if(mob.length<10){toast('Enter your 10-digit registered mobile number.');return;}
+  document.getElementById('otpMobile').textContent='••'+mob.slice(-4);
+  openOtp();
+}
+function openOtp(){
+  document.getElementById('otpOverlay').classList.add('show');
+  document.getElementById('otpErr').classList.remove('show');
+  document.querySelectorAll('.otp-cell').forEach(c=>{c.value='';c.classList.remove('filled');});
+  setTimeout(()=>document.querySelector('.otp-cell').focus(),200);
+  let t=28;
+  document.getElementById('otpTimer').textContent=t;
+  document.getElementById('otpResend').innerHTML='Resend in <span id="otpTimer">'+t+'</span>s';
+  clearInterval(otpTimerInt);
+  otpTimerInt=setInterval(()=>{
+    t--;
+    const el=document.getElementById('otpTimer');
+    if(t<=0){
+      clearInterval(otpTimerInt);
+      document.getElementById('otpResend').innerHTML='<span style="cursor:pointer" onclick="openOtp()">Resend code</span>';
+    }else if(el){el.textContent=t;}
+  },1000);
+}
+function closeOtp(){
+  document.getElementById('otpOverlay').classList.remove('show');
+  clearInterval(otpTimerInt);
+}
+document.getElementById('otpOverlay').addEventListener('click',e=>{
+  if(e.target.id==='otpOverlay')closeOtp();
+});
+const otpCells=document.querySelectorAll('.otp-cell');
+otpCells.forEach((cell,idx)=>{
+  cell.addEventListener('input',()=>{
+    cell.value=cell.value.replace(/[^0-9]/g,'');
+    cell.classList.toggle('filled',!!cell.value);
+    if(cell.value&&idx<5)otpCells[idx+1].focus();
+  });
+  cell.addEventListener('keydown',e=>{
+    if(e.key==='Backspace'&&!cell.value&&idx>0)otpCells[idx-1].focus();
+  });
+});
+function autofillOtp(){
+  const code='248139';
+  otpCells.forEach((c,i)=>{c.value=code[i];c.classList.add('filled');});
+}
+function verifyOtp(){
+  let code='';otpCells.forEach(c=>code+=c.value);
+  if(code==='248139'){
+    closeOtp();
+    expandTrack();
+  }else{
+    document.getElementById('otpErr').classList.add('show');
+    otpCells.forEach(c=>{c.value='';c.classList.remove('filled');});
+    otpCells[0].focus();
+  }
+}
+function expandTrack(){
+  document.getElementById('tcCollapsed').style.display='none';
+  document.getElementById('tcExpanded').classList.add('show');
+  document.getElementById('trackGrid').classList.add('expanded');
+  document.getElementById('tcExpanded').classList.add('fade-in');
+  setTimeout(()=>scrollToId('track'),100);
+  toast('Identity verified — opening your complaint timeline.');
+}
+function collapseTrack(){
+  document.getElementById('tcCollapsed').style.display='block';
+  document.getElementById('tcExpanded').classList.remove('show');
+  document.getElementById('trackGrid').classList.remove('expanded');
+}
+
+/* ========= FAQ ========= */
+const faqData=[
+  {tag:'UPI',q:'My UPI payment failed but the amount was debited. What now?',
+   a:'Failed UPI transactions are auto-reversed by the system, usually within 48 hours and at most 5 working days. If you don’t see the reversal, raise a dispute with the UPI reference number and we’ll trigger an NPCI-tracked chargeback.'},
+  {tag:'UPI',q:'Why is my UPI ID showing as declined?',
+   a:'This is usually a daily limit, an inactive UPI ID or an app permission issue. Check your transaction limits in the app, ensure the UPI ID is active, and re-verify your device. If it persists, raise a query.'},
+  {tag:'Cards',q:'How do I block a lost or stolen card immediately?',
+   a:'Use the Block a Card quick action, the mobile app, or call phone banking — the card is frozen instantly, 24×7. For suspected fraud, the blocked-card desk also opens a fraud case automatically.'},
+  {tag:'Cards',q:'I was charged an annual fee I didn’t expect. Can it be reviewed?',
+   a:'Yes. Many fees are waiver-eligible based on spend or relationship criteria. Raise a complaint under “Charges & fees dispute” with the statement entry — the Cards desk will review and respond within SLA.'},
+  {tag:'KYC',q:'How do I complete re-KYC without visiting a branch?',
+   a:'Most customers can complete re-KYC digitally via the app or Net Banking by uploading a valid ID and address proof. Raise it as a Service Request — it’s processed by operations, not investigated.'},
+  {tag:'Account',q:'My account access is blocked. How do I restore it?',
+   a:'Access is typically blocked for security after multiple failed logins or pending KYC. Reset your password using the quick action; if it remains blocked, raise a query and we’ll guide you through reactivation.'},
+  {tag:'Tracking',q:'How do I track a complaint and what do the stages mean?',
+   a:'Enter your SR number in Track a Request and verify with an OTP. A complaint moves through five stages — Received, Assigned, Investigation, Resolution Shared and Closure — each with timestamps and the owning team.'},
+  {tag:'Escalation',q:'What if my complaint isn’t resolved within the SLA?',
+   a:'Escalation is built into the timeline. Once the SLA window passes, the case becomes eligible for Level 2 (Grievance Officer) and onward. Earlier interactions stay linked, and escalation never counts against you.'},
+  {tag:'Statements',q:'How do I download an account statement for a custom period?',
+   a:'Use the Download Statement quick action, pick any date range, and the PDF is generated instantly. Statements older than the online window can be requested as a Service Request.'},
+  {tag:'Fraud',q:'I think I’ve been targeted by a scam. What should I do first?',
+   a:'Act fast — block the affected card or freeze the account, then report through the Fraud & Blocked-Card desk, which operates 24×7 outside the standard queue. For cyber-fraud, also file on the NCCRP portal.'}
+];
+function faqIcon(){return '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>';}
+function renderFaqs(list){
+  const el=document.getElementById('faqList');
+  if(!list.length){
+    el.innerHTML='<div class="faq-empty">No articles matched that search.<br>Try a broader term — or describe it in the Support Workspace.</div>';
+    return;
+  }
+  el.innerHTML=list.map((f,i)=>
+    '<div class="faq-item" data-i="'+i+'">'+
+      '<div class="faq-q" onclick="toggleFaq(this)">'+
+        '<span class="fq-tag">'+f.tag+'</span>'+
+        '<b>'+f.q+'</b>'+
+        '<span class="fq-chev">'+faqIcon()+'</span>'+
+      '</div>'+
+      '<div class="faq-a"><div class="faq-a-in">'+f.a+
+        '<div class="faq-actions">'+
+          '<button class="faq-mini-btn" onclick="scrollToId(\'faq\')"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> This helped</button>'+
+          '<button class="faq-mini-btn red" onclick="scrollToId(\'workspace\')">Still need help — raise a complaint</button>'+
+          '<button class="faq-mini-btn" onclick="openAssistant(\'general\')">Ask the assistant</button>'+
+        '</div>'+
+      '</div></div>'+
+    '</div>').join('');
+}
+function toggleFaq(q){
+  const item=q.parentElement;
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(it=>{
+    it.classList.remove('open');
+    it.querySelector('.faq-a').style.maxHeight='0';
+  });
+  if(!open){
+    item.classList.add('open');
+    const a=item.querySelector('.faq-a');
+    a.style.maxHeight=a.querySelector('.faq-a-in').scrollHeight+'px';
+  }
+}
+function filterFaqs(){
+  const q=document.getElementById('faqSearch').value.toLowerCase().trim();
+  if(!q){renderFaqs(faqData);return;}
+  const f=faqData.filter(d=>(d.q+' '+d.a+' '+d.tag).toLowerCase().includes(q));
+  renderFaqs(f);
+}
+renderFaqs(faqData);
+function switchFaqTab(tab){
+  document.querySelectorAll('.faq-tab').forEach(t=>t.classList.toggle('active',t.dataset.ftab===tab));
+  document.getElementById('faqPane').classList.toggle('is-hidden',tab!=='faqs');
+  document.getElementById('actionsPane').classList.toggle('is-hidden',tab!=='actions');
+}
+
+/* ========= SUPPORT ASSISTANT ========= */
+const assistantContexts={
+  general:{intro:'Hi — I’m your support assistant. I can explain how this works, help you pick the right path, or point you to the fastest channel. What’s on your mind?',
+    chips:['Complaint or query?','How do I track an SR?','How does escalation work?','I think it’s fraud']},
+  'which-folder':{intro:'Happy to help you choose. <b>Complaint</b> is for unresolved issues that need investigation and a reference number. <b>Query</b> is a quick question. <b>Service Request</b> is a standard action like a cheque book. <b>Feedback</b> shapes service with no escalation. What are you trying to do?',
+    chips:['Money went missing','I have a how-to question','I need a new cheque book','Track an existing case']},
+  'escalation-1':{intro:'<b>Level 1 — Customer Care & Branch</b> is your first point of contact. Raise complaints here through the workspace or your branch. Everyday concerns resolve in 3–5 working days. If that window passes, Level 2 opens automatically.',
+    chips:['What’s Level 2?','How do I escalate?','Back to start']},
+  'escalation-2':{intro:'<b>Level 2 — Grievance Redressal Officer</b> reviews cases unresolved or past SLA at Level 1, with full history and clear ownership. It becomes available after 5 working days. You don’t restart anything — earlier interactions carry forward.',
+    chips:['What’s Level 3?','Does escalation hurt my case?','Back to start']},
+  'escalation-3':{intro:'<b>Level 3 — Principal Nodal Officer</b> is the bank’s apex grievance authority, handling matters unresolved at the regional level and issuing a final position. It opens after 10 working days. Beyond this sits the RBI Ombudsman.',
+    chips:['Tell me about the Ombudsman','How do I reach Level 3?','Back to start']},
+  fraud:{intro:'If you suspect fraud, act quickly. First, <b>block the affected card</b> or freeze the account. Then report through the Fraud & Blocked-Card desk — it runs 24×7 outside the standard queue, and a specialist takes over within minutes. Want me to open it?',
+    chips:['Open the fraud desk','What evidence do I need?','Report on NCCRP']},
+  channels:{intro:'Every channel shares your history and reference number, so you can switch freely. For something <b>urgent</b>, use WhatsApp or phone banking. For a <b>written record</b>, use email. For <b>documents and KYC</b>, a branch works best. What’s your situation?',
+    chips:['It’s urgent','I want a written trail','I need to submit documents']}
+};
+const assistantReplies=[
+  {kw:['fraud','scam','unauthorised','unauthorized','hacked','cheated'],
+   r:'That sounds time-sensitive. Block the affected card first, then use the <b>Fraud & Blocked-Card desk</b> — it bypasses the queue and a specialist responds within minutes. I’d treat this as priority over a standard complaint.',
+   chips:['Open the fraud desk','Report on NCCRP']},
+  {kw:['track','status','where','sr number','reference'],
+   r:'To track a case, go to <b>Track a Request</b>, enter your SR number and registered mobile, then verify with an OTP. You’ll see the full five-stage timeline, the owning team and escalation eligibility.',
+   chips:['Take me to tracking','What do the stages mean?']},
+  {kw:['escalat','ombudsman','nodal','grievance officer'],
+   r:'Escalation runs in four levels — Customer Care, Grievance Officer, Principal Nodal Officer, and the RBI Ombudsman. Each opens at a defined SLA, and earlier interactions always carry forward. It’s informational — raising it never counts against you.',
+   chips:['See the escalation matrix','What’s Level 2?']},
+  {kw:['complaint','query','which','difference','folder'],
+   r:'Quick rule of thumb: if it needs <b>investigation and a reference number</b>, file a Complaint. If it’s a <b>quick question</b>, use Query. A standard action like a cheque book is a Service Request. Feedback is for service notes with no escalation.',
+   chips:['Open the workspace','Money debited not credited']},
+  {kw:['debit','credit','money','upi','payment','failed','refund'],
+   r:'For money debited but not credited, failed transactions usually auto-reverse within 3–5 working days. If it hasn’t, raise a <b>transaction dispute</b> from the workspace — we’ll trigger an NPCI-tracked chargeback.',
+   chips:['Raise a dispute','How long does it take?']},
+  {kw:['kyc','document','address','update'],
+   r:'A KYC update is a <b>Service Request</b>, not a complaint — it’s processed by operations, not investigated. Most customers can complete it digitally by uploading an ID and address proof. Want me to point you there?',
+   chips:['Open service request','Which documents work?']},
+  {kw:['card','block','lost','stolen'],
+   r:'To block a card, use the <b>Block a Card</b> quick action or call phone banking — it freezes instantly, 24×7. If you suspect misuse, the blocked-card desk also opens a fraud case for you automatically.',
+   chips:['Block a card','It might be fraud']},
+  {kw:['time','long','sla','how long','when'],
+   r:'Indicative timelines: complaints are acknowledged within 4 hours and resolved within SLA (often 5–7 working days); queries get a first reply within a few working hours; service requests follow standard processing windows.',
+   chips:['Raise a complaint','Track a request']}
+];
+let assistantOpened=false;
+function renderAssistantContext(ctx){
+  const c=assistantContexts[ctx]||assistantContexts.general;
+  const body=document.getElementById('adBody');
+  body.innerHTML='';
+  addBotMsg(c.intro,c.chips);
+}
+function addBotMsg(html,chips){
+  const body=document.getElementById('adBody');
+  const m=document.createElement('div');
+  m.className='ad-msg bot';
+  m.innerHTML='<div class="adm-av"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg></div>'+
+    '<div class="ad-bubble">'+html+'</div>';
+  body.appendChild(m);
+  if(chips&&chips.length){
+    const cd=document.createElement('div');
+    cd.className='ad-chips';
+    cd.innerHTML=chips.map(ch=>'<button class="ad-chip" onclick="assistantChip(this)">'+ch+'</button>').join('');
+    body.appendChild(cd);
+  }
+  body.scrollTop=body.scrollHeight;
+}
+function addUserMsg(text){
+  const body=document.getElementById('adBody');
+  const m=document.createElement('div');
+  m.className='ad-msg user';
+  m.innerHTML='<div class="adm-av"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg></div>'+
+    '<div class="ad-bubble">'+text+'</div>';
+  body.appendChild(m);
+  body.scrollTop=body.scrollHeight;
+}
+function showTyping(){
+  const body=document.getElementById('adBody');
+  const t=document.createElement('div');
+  t.className='ad-msg bot';t.id='typingMsg';
+  t.innerHTML='<div class="adm-av"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4zM5 21a7 7 0 0 1 14 0"/></svg></div>'+
+    '<div class="ad-bubble" style="padding:4px 6px;"><div class="ad-typing"><span></span><span></span><span></span></div></div>';
+  body.appendChild(t);
+  body.scrollTop=body.scrollHeight;
+}
+function openAssistant(ctx){
+  document.getElementById('assistantDrawer').classList.add('open');
+  document.getElementById('assistantFab').classList.add('hidden');
+  if(ctx&&typeof ctx==='string'){
+    renderAssistantContext(ctx);
+  }else if(!assistantOpened){
+    renderAssistantContext('general');
+  }
+  assistantOpened=true;
+}
+function closeAssistant(){
+  document.getElementById('assistantDrawer').classList.remove('open');
+  document.getElementById('assistantFab').classList.remove('hidden');
+}
+function assistantChip(btn){
+  const text=btn.textContent;
+  const map={
+    'Open the workspace':()=>scrollToId('workspace'),
+    'Open the fraud desk':()=>scrollToId('specialized'),
+    'Take me to tracking':()=>scrollToId('track'),
+    'See the escalation matrix':()=>scrollToId('escalation'),
+    'Raise a dispute':()=>scrollToId('workspace'),
+    'Raise a complaint':()=>scrollToId('workspace'),
+    'Open service request':()=>{scrollToId('workspace');switchTab('request');},
+    'Track a request':()=>scrollToId('track'),
+    'Back to start':()=>{renderAssistantContext('general');return;}
+  };
+  addUserMsg(text);
+  if(map[text]){map[text]();}
+  respondAssistant(text);
+}
+function sendAssistant(){
+  const inp=document.getElementById('adInput');
+  const text=inp.value.trim();
+  if(!text)return;
+  addUserMsg(text);
+  inp.value='';
+  respondAssistant(text);
+}
+function respondAssistant(text){
+  showTyping();
+  const q=text.toLowerCase();
+  setTimeout(()=>{
+    const tm=document.getElementById('typingMsg');if(tm)tm.remove();
+    let match=assistantReplies.find(r=>r.kw.some(k=>q.includes(k)));
+    if(match){
+      addBotMsg(match.r,match.chips);
+    }else{
+      addBotMsg('I can help with complaints, queries, tracking, escalation, fraud and contact channels. Could you tell me a bit more about your situation — or pick one of these?',
+        ['Complaint or query?','Track an SR','How escalation works','I think it’s fraud']);
+    }
+  },820);
+}
+
+/* ========= MISC ========= */
+window.addEventListener('load',()=>{
+  setTimeout(()=>document.getElementById('assistantFab').classList.remove('hidden'),600);
+});
+</script>
+
+</body>
+</html>
